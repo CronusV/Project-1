@@ -1,0 +1,99 @@
+2023-09-20T18:48:52.342Z [info]: Server is listening on Port: 3000
+2023-09-20T18:49:00.770Z [info]: In test express endpoint
+2023-09-20T19:59:50.192Z [info]: Server is listening on Port: 3000
+2023-09-20T20:00:12.138Z [info]: Trying to login
+2023-09-20T20:00:12.139Z [info]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-20T20:00:53.621Z [info]: Server is listening on Port: 3000
+2023-09-20T20:00:59.668Z [info]: Trying to login
+2023-09-20T20:00:59.669Z [info]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-20T20:01:28.466Z [info]: Trying to login
+2023-09-20T20:01:28.466Z [info]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-20T20:01:33.416Z [info]: Trying to login
+2023-09-20T20:01:38.190Z [info]: Trying to login
+2023-09-20T20:01:38.190Z [info]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-20T20:03:20.905Z [info]: Server is listening on Port: 3000
+2023-09-20T20:03:26.912Z [info]: Trying to login
+2023-09-20T20:07:47.020Z [info]: Server is listening on Port: 3000
+2023-09-20T20:08:26.345Z [info]: Trying to login
+2023-09-20T20:08:26.807Z [error]: Failed to get item from DyanamoDB
+2023-09-20T20:09:17.330Z [info]: Trying to login
+2023-09-20T20:09:17.732Z [error]: Failed to get item from DyanamoDB
+2023-09-20T20:09:58.099Z [info]: Server is listening on Port: 3000
+2023-09-20T20:10:04.011Z [info]: Trying to login
+2023-09-20T20:10:04.011Z [error]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-20T20:10:07.864Z [info]: Trying to login
+2023-09-20T20:10:08.315Z [error]: Failed to get item from DyanamoDB because invalid username
+2023-09-20T20:12:03.457Z [info]: Server is listening on Port: 3000
+2023-09-20T20:12:07.596Z [info]: Trying to login
+2023-09-20T20:12:08.056Z [error]: Failed to get item from DyanamoDB because invalid username
+2023-09-20T20:12:27.808Z [info]: Server is listening on Port: 3000
+2023-09-20T20:12:29.365Z [info]: Trying to login
+2023-09-20T20:12:29.822Z [error]: Failed to get item from DyanamoDB because invalid username
+2023-09-20T20:15:19.717Z [info]: Server is listening on Port: 3000
+2023-09-20T20:15:21.799Z [info]: Trying to login
+2023-09-20T20:15:22.246Z [error]: Failed to get item from DyanamoDB because invalid username. Error ValidationException: The provided key element does not match the schema
+2023-09-20T20:27:54.034Z [info]: Server is listening on Port: 3000
+2023-09-20T20:28:00.751Z [info]: Trying to login
+2023-09-20T20:28:00.756Z [error]: Failed to get item from DyanamoDB because invalid username. Error MissingRequiredParameter: Missing required key 'Key' in params
+2023-09-20T20:28:42.417Z [info]: Server is listening on Port: 3000
+2023-09-20T20:28:45.720Z [info]: Trying to login
+2023-09-20T20:34:23.481Z [info]: Server is listening on Port: 3000
+2023-09-20T20:34:26.291Z [info]: Trying to login
+2023-09-20T20:34:26.741Z [error]: Failed to get item from DyanamoDB because invalid username. Error ValidationException: Either the KeyConditions or KeyConditionExpression parameter must be specified in the request.
+2023-09-20T20:34:44.503Z [info]: Server is listening on Port: 3000
+2023-09-20T20:34:46.293Z [info]: Trying to login
+2023-09-20T20:34:46.747Z [error]: Failed to get item from DyanamoDB because invalid username. Error ValidationException: The provided key element does not match the schema
+2023-09-20T20:39:36.083Z [info]: Server is listening on Port: 3000
+2023-09-20T20:39:46.170Z [info]: Trying to login
+2023-09-20T20:47:23.973Z [info]: Server is listening on Port: 3000
+2023-09-20T20:47:31.961Z [info]: Trying to login
+2023-09-20T20:48:56.332Z [info]: Trying to login
+2023-09-20T20:48:56.333Z [error]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-20T20:49:06.646Z [info]: Trying to login
+2023-09-20T20:52:13.863Z [info]: Server is listening on Port: 3000
+2023-09-20T20:52:17.913Z [info]: Trying to login
+2023-09-20T20:52:50.166Z [info]: Trying to login
+2023-09-20T20:54:29.193Z [info]: Server is listening on Port: 3000
+2023-09-20T20:54:33.438Z [info]: Trying to login
+2023-09-20T20:54:43.942Z [info]: Trying to login
+2023-09-20T21:00:33.788Z [info]: Trying to login
+2023-09-20T21:01:55.306Z [info]: Server is listening on Port: 3000
+2023-09-20T21:01:59.001Z [info]: Trying to login
+2023-09-20T21:01:59.462Z [error]: This username does not exist: validName
+2023-09-20T21:02:33.447Z [info]: Server is listening on Port: 3000
+2023-09-20T21:02:34.568Z [info]: Trying to login
+2023-09-20T21:02:35.006Z [error]: This username does not exist: validName
+2023-09-20T21:02:40.089Z [info]: Trying to login
+2023-09-20T21:02:40.089Z [error]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-20T21:02:49.422Z [info]: Trying to login
+2023-09-20T21:02:54.828Z [info]: Trying to login
+2023-09-20T21:02:54.829Z [error]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-20T21:02:57.846Z [info]: Trying to login
+2023-09-20T21:02:58.239Z [error]: This username does not exist: validName
+2023-09-20T21:03:07.203Z [info]: Trying to login
+2023-09-20T21:03:07.204Z [error]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-20T21:03:53.278Z [info]: Server is listening on Port: 3000
+2023-09-20T21:03:58.277Z [info]: Trying to login
+2023-09-20T21:05:50.370Z [info]: Server is listening on Port: 3000
+2023-09-20T21:05:57.510Z [info]: Trying to login
+2023-09-20T21:06:04.013Z [info]: Trying to login
+2023-09-20T21:10:35.899Z [info]: Server is listening on Port: 3000
+2023-09-20T21:10:50.487Z [info]: Trying to login
+2023-09-20T21:10:50.927Z [info]: Succesfull login
+2023-09-20T21:12:02.888Z [info]: Trying to login
+2023-09-20T21:18:07.729Z [info]: Server is listening on Port: 3000
+2023-09-20T21:18:12.093Z [info]: Trying to login
+2023-09-20T21:18:12.094Z [error]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-20T21:18:17.649Z [info]: Trying to login
+2023-09-20T21:18:21.117Z [info]: Trying to login
+2023-09-20T21:18:21.402Z [info]: Succesfull login
