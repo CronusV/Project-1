@@ -1,0 +1,55 @@
+// Create router
+const express = require('express');
+const router = express.Router();
+// Logger
+const logger = require('../utils/logger');
+
+const userDAO = require('../integration/userDAO');
+const MW = require('./middleware/logRegMW');
+
+router.post('/', MW.validateUserPass, (req, res) => {
+  logger.info('Trying to login');
+  const userReq = req.body;
+  if (userReq.valid) {
+    userDAO
+      .getUser(userReq.username)
+      .then((data) => {
+        const user = data.Item;
+        // Check if user is undefined
+        if (user) {
+          if (user.password === userReq.password) {
+            logger.info('Succesfull login');
+            // Set header to current user and send their role back
+            res.setHeader('Current-User', user.username);
+            res.status(200).send({ role: user.role });
+          } else {
+            logger.error('Username and password do not match');
+            res
+              .status(400)
+              .send({ message: 'Username and password do not match' });
+          }
+        } else {
+          logger.error(`This username does not exist: ${userReq.username}`);
+          res.status(400).send({
+            message: `This username does not exist: ${userReq.username}`,
+          });
+        }
+      })
+      .catch((err) => {
+        logger.error(
+          `Failed to get item from DyanamoDB because invalid username. Error ${err}`
+        );
+        res.status(400).send({
+          message: 'Failed to get item from DyanamoDB because invalid username',
+        });
+      });
+  } else {
+    logger.error(`Failed to login because either no username or password
+    or empty strings in those values`);
+    res.status(400).send({
+      message: `Failed to login because either no username or password
+    or empty strings in those values`,
+    });
+  }
+});
+module.exports = router;
