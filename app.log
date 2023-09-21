@@ -97,3 +97,80 @@
 2023-09-20T21:18:17.649Z [info]: Trying to login
 2023-09-20T21:18:21.117Z [info]: Trying to login
 2023-09-20T21:18:21.402Z [info]: Succesfull login
+2023-09-20T21:43:05.140Z [info]: Server is listening on Port: 3000
+2023-09-20T21:44:57.422Z [info]: Trying to register
+2023-09-20T21:44:57.861Z [error]: Trying to create account with a used username
+2023-09-20T21:46:41.455Z [info]: Server is listening on Port: 3000
+2023-09-20T21:47:23.590Z [info]: Trying to register
+2023-09-20T21:47:24.020Z [error]: Trying to create account with a used username
+2023-09-21T02:59:22.842Z [info]: Server is listening on Port: 3000
+2023-09-21T02:59:34.738Z [info]: Trying to register
+2023-09-21T02:59:35.486Z [info]: Successful POST:
+ {"username":"Alex","password":"123456","valid":true}
+2023-09-21T03:00:58.233Z [info]: Trying to register
+2023-09-21T03:00:58.644Z [error]: Couldn't create user because username already taken: Alex
+2023-09-21T03:03:12.039Z [info]: Trying to register
+2023-09-21T03:03:12.460Z [error]: Couldn't create user because username already taken: Alex
+2023-09-21T03:03:18.335Z [info]: Trying to register
+2023-09-21T03:03:18.335Z [error]: Failed to register because either no username or password
+    or empty strings in those values
+2023-09-21T03:03:37.074Z [info]: Trying to register
+2023-09-21T03:03:37.075Z [error]: Failed to register because either no username or password
+    or empty strings in those values
+2023-09-21T03:03:48.816Z [info]: Trying to register
+2023-09-21T03:03:48.816Z [error]: Failed to register because either no username or password
+    or empty strings in those values
+2023-09-21T03:04:14.745Z [info]: Trying to register
+2023-09-21T03:04:14.746Z [error]: Failed to register because either no username or password
+    or empty strings in those values
+2023-09-21T03:04:22.471Z [info]: Trying to register
+2023-09-21T03:04:22.882Z [error]: Couldn't create user because username already taken: Alex
+2023-09-21T03:17:58.858Z [info]: Server is listening on Port: 3000
+2023-09-21T03:18:05.986Z [info]: Trying to register
+2023-09-21T03:18:06.765Z [info]: Successful POST:
+ {"username":"Alex1","password":"123456","valid":true}
+2023-09-21T03:19:56.274Z [info]: Server is listening on Port: 3000
+2023-09-21T03:20:02.914Z [info]: Trying to register
+2023-09-21T03:20:03.645Z [info]: Failed to add item to dynamoDB
+2023-09-21T03:20:40.064Z [info]: Server is listening on Port: 3000
+2023-09-21T03:20:44.658Z [info]: Trying to register
+2023-09-21T03:20:45.504Z [info]: Failed to add item to dynamoDB: ValidationException: ReturnValues can only be ALL_OLD or NONE
+2023-09-21T03:21:04.304Z [info]: Server is listening on Port: 3000
+2023-09-21T03:21:08.489Z [info]: Trying to register
+2023-09-21T03:21:09.226Z [info]: Successful POST:
+ {"username":"Alex13","password":"123456","valid":true}
+2023-09-21T05:22:11.583Z [info]: Server is listening on Port: 3000
+2023-09-21T05:22:15.736Z [info]: Trying to post tickets
+2023-09-21T05:22:15.736Z [error]: Failed to post ticket because: undefined
+2023-09-21T05:23:59.027Z [info]: Server is listening on Port: 3000
+2023-09-21T05:24:01.194Z [info]: Trying to post tickets
+2023-09-21T05:24:01.195Z [error]: Failed to post ticket because: undefined
+2023-09-21T05:24:44.921Z [info]: Server is listening on Port: 3000
+2023-09-21T05:24:46.361Z [info]: Trying to post tickets
+2023-09-21T05:24:46.361Z [error]: Failed to post ticket because: undefined
+2023-09-21T05:25:34.611Z [info]: Server is listening on Port: 3000
+2023-09-21T05:25:41.542Z [info]: Trying to post tickets
+2023-09-21T05:25:41.542Z [error]: Failed to post ticket because: Invalid ticket because No amount in ticket or no amount attribute, andNo description in message or no description in message
+2023-09-21T05:26:01.863Z [info]: Server is listening on Port: 3000
+2023-09-21T05:26:10.768Z [info]: Trying to post tickets
+2023-09-21T05:26:10.769Z [error]: Failed to post ticket because: Invalid ticket because No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-21T05:26:16.525Z [info]: Trying to post tickets
+2023-09-21T05:26:16.525Z [error]: Failed to post ticket because: Invalid ticket because No description in message or no description in message
+2023-09-21T05:26:41.493Z [info]: Server is listening on Port: 3000
+2023-09-21T05:26:43.564Z [info]: Trying to post tickets
+2023-09-21T05:26:43.565Z [error]: Failed to post ticket because: No description in message or no description in message
+2023-09-21T05:26:52.166Z [info]: Trying to post tickets
+2023-09-21T05:26:52.166Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-21T05:47:34.283Z [info]: Server is listening on Port: 3000
+2023-09-21T05:47:41.698Z [info]: Trying to post tickets
+2023-09-21T05:47:41.698Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-21T05:48:54.823Z [info]: Trying to post tickets
+2023-09-21T05:48:55.310Z [info]: Successful POST:
+ {"author":"Alex","amount":"324","desc":"Testing desc","valid":true}
+2023-09-21T05:49:56.984Z [info]: Trying to post tickets
+2023-09-21T05:49:57.391Z [info]: Successful POST:
+ {"author":"Alex","amount":"324","desc":"traveled outside","type":"travel","valid":true}
+2023-09-21T05:51:06.366Z [info]: Trying to post tickets
+2023-09-21T05:51:06.769Z [info]: Successful POST:
+ {"author":"Alex","amount":98789,"desc":"traveled to paris","valid":true}
+2023-09-21T05:51:40.939Z [info]: Server is listening on Port: 3000
