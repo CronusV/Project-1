@@ -27,4 +27,18 @@ function getUser(username) {
   return docClient.get(params).promise();
 }
 
-module.exports = { getUser };
+// POST user
+// if successful then returns {}, if not then throws error
+function addUser(username, password, role = 'employee') {
+  const params = {
+    TableName,
+    Item: {
+      username,
+      password,
+      role,
+    },
+  };
+  return docClient.put(params).promise();
+}
+
+module.exports = { getUser, addUser };
