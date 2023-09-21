@@ -13,9 +13,10 @@ router.post('/', MW.validateTicket, (req, res) => {
   const newTicket = req.body;
   if (newTicket.valid) {
     // ASSUME WE HAVE AUTHOR SOMEWHERE (probably jwt token)
+    const ticket_id = uuid.v4();
     ticketDAO
       .addTicket(
-        uuid.v4(),
+        ticket_id,
         newTicket.amount,
         newTicket.desc,
         newTicket.author,
@@ -26,6 +27,7 @@ router.post('/', MW.validateTicket, (req, res) => {
         logger.info(`Successful POST:\n ${JSON.stringify(newTicket)}`);
         res.status(201).send({
           message: 'Successfully created ticket',
+          ticket_id,
         });
       })
       .catch((err) => {
