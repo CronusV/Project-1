@@ -174,3 +174,25 @@
 2023-09-21T05:51:06.769Z [info]: Successful POST:
  {"author":"Alex","amount":98789,"desc":"traveled to paris","valid":true}
 2023-09-21T05:51:40.939Z [info]: Server is listening on Port: 3000
+2023-09-21T06:05:02.924Z [info]: Server is listening on Port: 3000
+2023-09-21T06:05:20.003Z [info]: Trying to post tickets
+2023-09-21T06:05:20.465Z [info]: Successful POST:
+ {"author":"Alex","amount":989,"desc":"traveled to chicago","valid":true}
+2023-09-21T06:20:34.027Z [info]: Server is listening on Port: 3000
+2023-09-21T06:21:03.737Z [info]: Server is listening on Port: 3000
+2023-09-21T06:24:04.739Z [info]: Server is listening on Port: 3000
+2023-09-21T06:24:07.566Z [error]: Failed to get tickets, need query parameter status with values: approved, denied, pending
+2023-09-21T06:36:39.558Z [info]: Server is listening on Port: 3000
+2023-09-21T06:36:46.815Z [error]: Failed to get tickets, need query parameter status with values: approved, denied, pending
+2023-09-21T06:36:53.171Z [error]: DynamoDB failed to get tickets
+ValidationException: Query condition missed key schema element: ticket_id
+2023-09-21T06:50:30.778Z [info]: Trying to post tickets
+2023-09-21T06:50:31.242Z [info]: Successful POST:
+ {"author":"Bob","amount":9849,"desc":"traveled to vegas","valid":true}
+2023-09-21T15:08:43.301Z [info]: Server is listening on Port: 3000
+2023-09-21T15:09:12.260Z [info]: Trying to post tickets
+2023-09-21T15:09:12.260Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-21T15:09:38.883Z [info]: Trying to post tickets
+2023-09-21T15:09:38.883Z [error]: Failed to post ticket because: No description in message or no description in message
+2023-09-21T15:09:55.293Z [info]: Trying to post tickets
+2023-09-21T15:09:55.293Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute
