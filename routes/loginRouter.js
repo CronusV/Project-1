@@ -18,7 +18,9 @@ router.post('/', MW.validateUserPass, (req, res) => {
         // Check if user is undefined
         if (user) {
           if (user.password === userReq.password) {
-            logger.info('Succesfull login');
+            logger.info(
+              `Succesfull login, current user ${JSON.stringify(user)}`
+            );
             // Set header to current user and send their role back
             res.setHeader('Current-User', user.username);
             res.status(200).send({ role: user.role });
