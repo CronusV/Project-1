@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const jwtUtil = require('../utils/jwtUtil');
 // Logger
 const logger = require('../utils/logger');
 
@@ -20,9 +21,12 @@ router.post('/', MW.validateUserPass, (req, res) => {
             .addUser(newUser.username, newUser.password)
             .then((data) => {
               // If valid then data is simply {}
+              // Create token (jwt)
+              const token = jwtUtil.createJWT(newUser.username, newUser.role);
               logger.info(`Successful POST:\n ${JSON.stringify(newUser)}`);
               res.status(201).send({
                 message: 'Successfully created user',
+                token,
               });
             })
             .catch((err) => {
