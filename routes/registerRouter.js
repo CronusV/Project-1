@@ -26,7 +26,7 @@ router.post('/', MW.validateUserPass, (req, res) => {
               });
             })
             .catch((err) => {
-              logger.info(`Failed to add item to dynamoDB: ${err}`);
+              logger.info(`Failed to add user to dynamoDB: ${err}`);
               res
                 .status(400)
                 .send({ message: `Failed to add user in dynamoDB` });
