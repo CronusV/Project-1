@@ -1,6 +1,7 @@
 // Create router
 const express = require('express');
 const router = express.Router();
+const jwtUtil = require('../utils/jwtUtil');
 // Logger
 const logger = require('../utils/logger');
 
@@ -21,9 +22,11 @@ router.post('/', MW.validateUserPass, (req, res) => {
             logger.info(
               `Succesfull login, current user ${JSON.stringify(user)}`
             );
+            // Create token (jwt)
+            const token = jwtUtil.createJWT(user.username, user.role);
             // Set header to current user and send their role back
             res.setHeader('Current-User', user.username);
-            res.status(200).send({ role: user.role });
+            res.status(200).send({ role: user.role, token });
           } else {
             logger.error('Username and password do not match');
             res
