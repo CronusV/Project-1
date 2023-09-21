@@ -35,4 +35,18 @@ function addTicket(
   return docClient.put(params).promise();
 }
 
-module.exports = { addTicket };
+function getTickets(status) {
+  const params = {
+    TableName,
+    KeyConditionExpression: '#status = :status',
+    ExpressionAttributeNames: {
+      '#status': 'status',
+    },
+    ExpressionAttributeValues: {
+      ':status': status,
+    },
+  };
+  return docClient.query(params).promise();
+}
+
+module.exports = { addTicket, getTickets };
