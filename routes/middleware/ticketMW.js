@@ -2,13 +2,18 @@
 function validateTicket(req, res, next) {
   const body = req.body;
   const invalidMessages = [];
-  if (!body.amount) invalidMessages.push('No amount in ticket');
-  if (!body.desc) invalidMessages.push('No description in message');
+  if (!body.amount || body.amount === '') {
+    invalidMessages.push('No amount in ticket or no amount attribute');
+  }
+  if (!body.desc || body.desc === '') {
+    invalidMessages.push(
+      'No description in message or no description in message'
+    );
+  }
+
   // Add messages if error
   if (invalidMessages.length > 0) {
-    body.invalidMessage = `Invalid ticket because ${invalidMessages.join(
-      ', and'
-    )}`;
+    body.invalidMessage = `${invalidMessages.join(', and ')}`;
     body.valid = false;
   } else {
     body.valid = true;
