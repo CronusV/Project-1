@@ -13,25 +13,20 @@ router.post('/', MW.validateUserPass, (req, res) => {
     userDAO
       .getUser(newUser.username)
       .then((data) => {
-        // If get something back then means we already have that user
         // If {} comes back means there's no user.
-        // TODO check for {}
-        // TODO add user
-        // Has to be a better way than this surely
+        // Has to be a better way than this, surely
         if (data && Object.keys(data).length === 0) {
           userDAO
             .addUser(newUser.username, newUser.password)
             .then((data) => {
-              // If get something back then means we already have that user
-              // If {} comes back means there's no user.
-              // TODO check for {}
+              // If valid then data is simply {}
               logger.info(`Successful POST:\n ${JSON.stringify(newUser)}`);
               res.status(201).send({
                 message: 'Successfully created user',
               });
             })
             .catch((err) => {
-              logger.info('Failed to add item to dynamoDB');
+              logger.info(`Failed to add item to dynamoDB: ${err}`);
               res
                 .status(400)
                 .send({ message: `Failed to add user in dynamoDB` });
