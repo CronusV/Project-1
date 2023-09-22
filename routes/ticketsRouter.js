@@ -18,7 +18,7 @@ router.post('/', MW.validateTicket, MW.validateUser, (req, res) => {
       // ASSUME WE HAVE AUTHOR SOMEWHERE (probably jwt token)
       const ticket_id = uuid.v4();
       ticketDAO
-        .addTicket(ticket_id, body.amount, body.desc, body.author, body.type)
+        .addTicket(ticket_id, body.amount, body.desc, body.username, body.type)
         .then((data) => {
           // if valid then data is simply {}
           logger.info(`Successful POST:\n ${JSON.stringify(body)}`);
