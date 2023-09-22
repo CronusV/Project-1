@@ -69,4 +69,36 @@ function getTicketsByUser(author) {
   };
   return docClient.query(params).promise();
 }
-module.exports = { addTicket, getTickets, getTicketsByUser };
+
+function getTicketByID(ticket_id) {
+  const params = {
+    TableName,
+    Key: {
+      ticket_id,
+    },
+  };
+  return docClient.get(params).promise();
+}
+
+function updateTicketByID(ticket_id, newStatus) {
+  let params = {
+    TableName,
+    Key: { ticket_id },
+    UpdateExpression: 'set #status = :status',
+    ExpressionAttributeNames: {
+      '#status': 'status',
+    },
+    ExpressionAttributeValues: {
+      ':status': newStatus,
+    },
+  };
+
+  return docClient.update(params).promise();
+}
+module.exports = {
+  addTicket,
+  getTickets,
+  getTicketsByUser,
+  getTicketByID,
+  updateTicketByID,
+};
