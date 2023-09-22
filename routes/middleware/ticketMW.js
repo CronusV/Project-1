@@ -1,4 +1,5 @@
 const jwtUtil = require('../../utils/jwtUtil');
+const logger = require('../../utils/logger');
 // Check to see that ticket request is valid and has at least amount AND description
 function validateTicket(req, res, next) {
   const body = req.body;
@@ -31,30 +32,38 @@ function validateGetTickets(req, res, next) {
   } else {
     body.validTicket = false;
     body.invalidMessage =
-      'No valid status in query parameters. Only accept, pending, approved, and denied';
+      'No valid status in query parameters. Only accept, pending, approved, and denied. If just doing GET then means you have invalid token';
   }
   next();
 }
 
 // Make sure we have valid token
-function validateUser(req, res, next) {
+// Need to make await because jwtUtil was promised
+async function validateUser(req, res, next) {
   const body = req.body;
   const authorizationHead = req.headers.authorization;
   // Confirm that authorization exists and have Bearer
   if (authorizationHead && authorizationHead.startsWith('Bearer ')) {
     const token = authorizationHead.split(' ')[1]; // ['Bearer', <token>]
-    jwtUtil.verifyTokenAndReturnPayload(token).then((payload) => {
-      const userRole = payload.role;
-      if (userRole === 'employee' || userRole === 'manager') {
-        body.validUser = true;
+    await jwtUtil
+      .verifyTokenAndReturnPayload(token)
+      .then((payload) => {
+        const username = payload.username;
+        const userRole = payload.role;
+        if (userRole === 'employee' || userRole === 'manager') {
+          body.validUser = true;
+        } else {
+          // Means that userRole is something we don't have implemented yet
+          body.validUser = false;
+          body.invalidMessage = `Get not defined for role:${userRole}`;
+        }
         body.role = userRole;
-      } else {
-        // Means that userRole is something we don't have implemented yet
+        body.username = username;
+      })
+      .catch((err) => {
+        logger.info(`Error with jwtUtil ${err}`);
         body.validUser = false;
-        body.role = userRole;
-        body.invalidMessage = `Get not defined for role:${userRole}`;
-      }
-    });
+      });
   } else {
     // No authorization
     body.validUser = false;
