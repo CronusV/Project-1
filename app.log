@@ -410,3 +410,41 @@ ValidationException: Query condition missed key schema element: ticket_id
 2023-09-22T14:21:48.697Z [info]: Successfully retreived available tickets with status: pending
 2023-09-22T14:21:56.238Z [info]: Attempting to GET in ticketRouter
 2023-09-22T14:21:56.619Z [info]: Successfully retreived available tickets with status: denied
+2023-09-22T14:27:54.027Z [info]: Server is listening on Port: 3000
+2023-09-22T14:28:33.211Z [info]: Trying to login
+2023-09-22T14:28:33.658Z [error]: This username does not exist: Billy
+2023-09-22T14:29:05.874Z [info]: Trying to register
+2023-09-22T14:29:06.561Z [info]: Successful POST:
+ {"username":"Billy","password":"123456","valid":true}
+2023-09-22T14:31:24.952Z [info]: Server is listening on Port: 3000
+2023-09-22T14:31:28.536Z [info]: Trying to post tickets
+2023-09-22T14:31:28.536Z [error]: Error because Get not defined for role:undefined
+2023-09-22T14:31:40.956Z [info]: Trying to post tickets
+2023-09-22T14:31:40.956Z [error]: Error because Get not defined for role:undefined
+2023-09-22T14:33:55.564Z [info]: Server is listening on Port: 3000
+2023-09-22T14:33:58.767Z [info]: Trying to post tickets
+2023-09-22T14:33:58.768Z [error]: Error because Get not defined for role:undefined
+2023-09-22T14:34:55.296Z [info]: Server is listening on Port: 3000
+2023-09-22T14:34:58.261Z [info]: Trying to post tickets
+2023-09-22T14:34:58.261Z [error]: Error because Get not defined for role:undefined
+2023-09-22T14:38:27.329Z [info]: Trying to login
+2023-09-22T14:38:27.781Z [info]: Succesfull login, current user {"password":"123456","username":"Billy","role":"employee"}
+2023-09-22T14:38:31.735Z [info]: Trying to login
+2023-09-22T14:38:32.147Z [info]: Succesfull login, current user {"password":"123456","username":"Billy","role":"employee"}
+2023-09-22T14:38:50.788Z [info]: Trying to post tickets
+2023-09-22T14:38:51.188Z [info]: Successful POST:
+ {"amount":9,"desc":"went to park","valid":true,"validUser":true,"role":"employee","username":"Billy"}
+2023-09-22T14:39:26.479Z [info]: Trying to register
+2023-09-22T14:39:27.210Z [info]: Successful POST:
+ {"username":"Bob","password":"123456","valid":true}
+2023-09-22T14:39:32.652Z [info]: Trying to register
+2023-09-22T14:39:33.076Z [error]: Couldn't create user because username already taken: Bob
+2023-09-22T14:40:46.335Z [info]: Trying to post tickets
+2023-09-22T14:40:46.335Z [error]: Error because Get not defined for role:undefined
+2023-09-22T14:42:26.610Z [info]: Server is listening on Port: 3000
+2023-09-22T14:42:37.048Z [info]: Trying to register
+2023-09-22T14:42:37.877Z [info]: Successful POST:
+ {"username":"Jake","password":"123456","valid":true}
+2023-09-22T14:43:19.000Z [info]: Trying to post tickets
+2023-09-22T14:43:19.399Z [info]: Successful POST:
+ {"amount":97,"desc":"Went to vegas","valid":true,"validUser":true,"role":"employee","username":"Jake"}
