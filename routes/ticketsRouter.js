@@ -131,7 +131,6 @@ router.put(
         ticketDAO.getTicketByID(ticketID).then((data) => {
           const ticket = data.Item;
           if (ticket) {
-            console.log(`current valid in ticket with`);
             if (ticket.author === username) {
               logger.error('Can not edit your own ticket!');
               res
