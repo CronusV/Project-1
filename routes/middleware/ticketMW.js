@@ -23,6 +23,20 @@ function validateTicket(req, res, next) {
   next();
 }
 
+function validateNewTicketStatus(req, res, next) {
+  const body = req.body;
+  const newStatus = body.newStatus;
+
+  if (newStatus === 'approved' || newStatus === 'denied') {
+    body.validTicketStatus = true;
+  } else {
+    body.invalidMessage =
+      'newStatus must be defined in body and be either "approved" or "denied"';
+    body.validTicketStatus = false;
+  }
+  next();
+}
+
 function validateGetTickets(req, res, next) {
   const body = req.body;
   const status = req.query.status;
@@ -36,7 +50,18 @@ function validateGetTickets(req, res, next) {
   }
   next();
 }
-
+// Make sure we have ticketID as query parameter
+function validateTicketIDQuery(req, res, next) {
+  const body = req.body;
+  const ticketID = req.query.ticketID;
+  if (ticketID) {
+    body.validTicket = true;
+    body.ticketID = ticketID;
+  } else {
+    body.validTicket = false;
+  }
+  next();
+}
 // Make sure we have valid token
 // Need to make await because jwtUtil was promised
 async function validateUser(req, res, next) {
@@ -72,4 +97,10 @@ async function validateUser(req, res, next) {
   next();
 }
 
-module.exports = { validateTicket, validateGetTickets, validateUser };
+module.exports = {
+  validateTicket,
+  validateGetTickets,
+  validateUser,
+  validateTicketIDQuery,
+  validateNewTicketStatus,
+};

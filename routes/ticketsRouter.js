@@ -10,37 +10,37 @@ const MW = require('./middleware/ticketMW');
 
 // Assume we have user token or header
 // TODO ADD JWT TOKEN
-router.post('/', MW.validateTicket, (req, res) => {
+router.post('/', MW.validateTicket, MW.validateUser, (req, res) => {
   logger.info('Trying to post tickets');
-  const newTicket = req.body;
-  if (newTicket.valid) {
-    // ASSUME WE HAVE AUTHOR SOMEWHERE (probably jwt token)
-    const ticket_id = uuid.v4();
-    ticketDAO
-      .addTicket(
-        ticket_id,
-        newTicket.amount,
-        newTicket.desc,
-        newTicket.author,
-        newTicket.type
-      )
-      .then((data) => {
-        // if valid then data is simply {}
-        logger.info(`Successful POST:\n ${JSON.stringify(newTicket)}`);
-        res.status(201).send({
-          message: 'Successfully created ticket',
-          ticket_id,
+  const body = req.body;
+  const valid = body.valid;
+  if (body.validUser) {
+    if (valid) {
+      // ASSUME WE HAVE AUTHOR SOMEWHERE (probably jwt token)
+      const ticket_id = uuid.v4();
+      ticketDAO
+        .addTicket(ticket_id, body.amount, body.desc, body.author, body.type)
+        .then((data) => {
+          // if valid then data is simply {}
+          logger.info(`Successful POST:\n ${JSON.stringify(body)}`);
+          res.status(201).send({
+            message: 'Successfully created ticket',
+            ticket_id,
+          });
+        })
+        .catch((err) => {
+          logger.info(`Failed to add ticket to dynamoDB: ${err}`);
+          res.status(400).send({ message: `Failed to add ticket in dynamoDB` });
         });
-      })
-      .catch((err) => {
-        logger.info(`Failed to add ticket to dynamoDB: ${err}`);
-        res.status(400).send({ message: `Failed to add ticket in dynamoDB` });
+    } else {
+      logger.error(`Failed to post ticket because: ${body.invalidMessage}`);
+      res.status(400).send({
+        message: `Failed to post ticket because: ${body.invalidMessage}`,
       });
+    }
   } else {
-    logger.error(`Failed to post ticket because: ${newTicket.invalidMessage}`);
-    res.status(400).send({
-      message: `Failed to post ticket because: ${newTicket.invalidMessage}`,
-    });
+    logger.error(`Error because ${body.invalidMessage}`);
+    res.status(400).send({ message: `Error because ${body.invalidMessage}` });
   }
 });
 
@@ -105,5 +105,78 @@ router.get('/', MW.validateGetTickets, MW.validateUser, (req, res) => {
     res.status(400).send({ message: `Error because ${body.invalidMessage}` });
   }
 });
+//This takes care of changing requests
+router.put(
+  '/',
+  MW.validateTicketIDQuery,
+  MW.validateUser,
+  MW.validateNewTicketStatus,
+  (req, res) => {
+    logger.info('Attempting to POST in ticketRouter');
+    const body = req.body;
+    const validTicketStatus = body.validTicketStatus;
+    if (body.validUser && validTicketStatus) {
+      const userRole = body.role;
+      const username = body.username;
+      const ticketID = body.ticketID;
+      const newStatus = body.newStatus;
 
+      if (userRole === 'employee') {
+        logger.error(`Can't process requests with role: ${userRole}`);
+        res
+          .status(400)
+          .send({ message: `Can't process requests with role: ${userRole}` });
+      }
+      if (userRole === 'manager') {
+        // Get ticket that was asked for
+        ticketDAO.getTicketByID(ticketID).then((data) => {
+          const ticket = data.Item;
+          if (ticket) {
+            console.log(`current valid in ticket with`);
+            if (ticket.author === username) {
+              logger.error('Can not edit your own ticket!');
+              res
+                .status(400)
+                .send({ message: 'Can not edit your own ticket!' });
+            }
+            if (ticket.status !== 'pending') {
+              logger.error(
+                `Can not edit ticket that has already been processed! Ticket status: ${ticket.status}`
+              );
+              res.status(400).send({
+                message: `Can not edit ticket that has already been processed! Ticket status: ${ticket.status}`,
+              });
+            } else {
+              ticketDAO
+                .updateTicketByID(ticketID, newStatus)
+                .then((data) => {
+                  logger.info(
+                    `Successfully updated item: ${ticketID} with status: ${newStatus}`
+                  );
+                  res.status(200).send({
+                    message: `Successfully updated item: ${ticketID} with status: ${newStatus}`,
+                  });
+                })
+                .catch((err) => {
+                  logger.info(`Unable to update item ${ticketID} in dynamoDB`);
+                  res.status(500).send({
+                    message: `Unable to update item ${ticketID} in dynamoDB`,
+                  });
+                });
+            }
+            // Means ticket is pending and we should change it
+          } else {
+            logger.error(`Did not find any ticket with ticketID:${ticketID}`);
+            res.status(400).send({
+              message: `Did not find any ticket with ticketID:${ticketID}`,
+            });
+          }
+        });
+      }
+    } else {
+      logger.error(`Error because ${body.invalidMessage}`);
+      res.status(400).send({ message: `Error because ${body.invalidMessage}` });
+    }
+  }
+);
 module.exports = router;
