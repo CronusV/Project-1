@@ -323,3 +323,79 @@ ValidationException: Query condition missed key schema element: ticket_id
 2023-09-22T04:23:33.341Z [info]: Attempting to GET in ticketRouter
 2023-09-22T04:24:31.538Z [info]: Server is listening on Port: 3000
 2023-09-22T04:24:34.162Z [info]: Attempting to GET in ticketRouter
+2023-09-22T05:42:13.912Z [info]: Server is listening on Port: 3000
+2023-09-22T05:43:22.058Z [info]: Server is listening on Port: 3000
+2023-09-22T05:43:32.422Z [info]: Attempting to POST in ticketRouter
+2023-09-22T05:43:32.422Z [error]: Error because Need Authorization header with Bearer token
+2023-09-22T05:44:03.569Z [info]: Attempting to POST in ticketRouter
+2023-09-22T05:44:03.570Z [error]: Can't process requests with role employee
+2023-09-22T05:46:36.238Z [info]: Server is listening on Port: 3000
+2023-09-22T05:46:56.327Z [info]: Trying to login
+2023-09-22T05:46:56.793Z [error]: This username does not exist: ManagerUser
+2023-09-22T05:47:02.379Z [info]: Trying to login
+2023-09-22T05:47:02.806Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-22T05:47:21.477Z [info]: Attempting to POST in ticketRouter
+2023-09-22T05:48:08.897Z [info]: Server is listening on Port: 3000
+2023-09-22T05:48:11.789Z [info]: Attempting to POST in ticketRouter
+2023-09-22T05:48:29.447Z [info]: Server is listening on Port: 3000
+2023-09-22T05:48:31.936Z [info]: Attempting to POST in ticketRouter
+2023-09-22T05:48:48.946Z [info]: Attempting to POST in ticketRouter
+2023-09-22T05:50:13.268Z [info]: Server is listening on Port: 3000
+2023-09-22T05:50:16.767Z [info]: Attempting to POST in ticketRouter
+2023-09-22T05:50:23.436Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:11:49.534Z [info]: Server is listening on Port: 3000
+2023-09-22T06:11:53.821Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:12:34.754Z [info]: Server is listening on Port: 3000
+2023-09-22T06:12:41.328Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:12:41.329Z [info]: newStatus must be defined in body and be either "approved" or "denied
+2023-09-22T06:15:16.359Z [info]: Server is listening on Port: 3000
+2023-09-22T06:15:19.414Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:15:19.414Z [info]: newStatus must be defined in body and be either "approved" or "denied"
+2023-09-22T06:16:16.593Z [info]: Server is listening on Port: 3000
+2023-09-22T06:16:20.407Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:16:20.407Z [info]: newStatus must be defined in body and be either "approved" or "denied"
+2023-09-22T06:17:27.209Z [info]: Server is listening on Port: 3000
+2023-09-22T06:17:36.246Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:18:43.294Z [info]: Server is listening on Port: 3000
+2023-09-22T06:18:48.540Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:18:54.112Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:18:54.112Z [error]: Error because newStatus must be defined in body and be either "approved" or "denied"
+2023-09-22T06:19:58.236Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:33:10.494Z [info]: Server is listening on Port: 3000
+2023-09-22T06:33:16.612Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:33:17.491Z [info]: Successfully updated item: d50fdc81-7898-4cf7-9873-1381fb681b59 with status: approved
+2023-09-22T06:34:04.417Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:34:04.837Z [error]: Can not edit ticket that has already been processed! Ticket status: approved
+2023-09-22T06:34:05.131Z [info]: Successfully updated item: d50fdc81-7898-4cf7-9873-1381fb681b59 with status: approved
+2023-09-22T06:34:08.301Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:34:08.596Z [error]: Can not edit ticket that has already been processed! Ticket status: approved
+2023-09-22T06:34:08.903Z [info]: Successfully updated item: d50fdc81-7898-4cf7-9873-1381fb681b59 with status: approved
+2023-09-22T06:35:46.674Z [info]: Server is listening on Port: 3000
+2023-09-22T06:35:48.890Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:35:49.336Z [error]: Can not edit ticket that has already been processed! Ticket status: approved
+2023-09-22T06:37:38.116Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:37:38.515Z [error]: Can not edit ticket that has already been processed! Ticket status: approved
+2023-09-22T06:37:47.842Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:37:48.238Z [error]: Can not edit ticket that has already been processed! Ticket status: approved
+2023-09-22T06:39:28.674Z [info]: Server is listening on Port: 3000
+2023-09-22T06:39:31.454Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:39:31.899Z [error]: Can not edit ticket that has already been processed! Ticket status: approved
+2023-09-22T06:39:44.340Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:39:44.340Z [error]: Error because newStatus must be defined in body and be either "approved" or "denied"
+2023-09-22T06:39:57.006Z [info]: Attempting to POST in ticketRouter
+2023-09-22T06:39:57.418Z [error]: Can not edit ticket that has already been processed! Ticket status: approved
+2023-09-22T06:43:33.349Z [info]: Server is listening on Port: 3000
+2023-09-22T06:44:01.667Z [info]: Trying to login
+2023-09-22T06:44:02.140Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-22T06:44:30.942Z [info]: Trying to post tickets
+2023-09-22T06:46:25.326Z [info]: Server is listening on Port: 3000
+2023-09-22T06:46:31.210Z [info]: Trying to post tickets
+2023-09-22T06:49:36.849Z [info]: Server is listening on Port: 3000
+2023-09-22T06:49:39.085Z [info]: Trying to post tickets
+2023-09-22T06:49:39.085Z [error]: Error because Need Authorization header with Bearer token
+2023-09-22T06:50:23.268Z [info]: Trying to post tickets
+2023-09-22T06:50:23.268Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-22T06:51:02.731Z [info]: Trying to post tickets
+2023-09-22T06:51:03.178Z [info]: Successful POST:
+ {"author":"Alex","amount":9,"desc":"went to park","valid":true,"validUser":true,"role":"manager","username":"managerUser"}
+2023-09-22T06:51:49.905Z [info]: Server is listening on Port: 3000
