@@ -399,3 +399,14 @@ ValidationException: Query condition missed key schema element: ticket_id
 2023-09-22T06:51:03.178Z [info]: Successful POST:
  {"author":"Alex","amount":9,"desc":"went to park","valid":true,"validUser":true,"role":"manager","username":"managerUser"}
 2023-09-22T06:51:49.905Z [info]: Server is listening on Port: 3000
+2023-09-22T14:18:55.518Z [info]: Server is listening on Port: 3000
+2023-09-22T14:19:18.190Z [info]: Trying to login
+2023-09-22T14:19:18.665Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-22T14:20:06.689Z [info]: Attempting to GET in ticketRouter
+2023-09-22T14:20:07.095Z [info]: Successfully retreived available tickets with status: pending
+2023-09-22T14:21:42.050Z [info]: Attempting to POST in ticketRouter
+2023-09-22T14:21:42.758Z [info]: Successfully updated item: 42787e6a-0b87-4f16-be09-4c13de6fd948 with status: denied
+2023-09-22T14:21:48.303Z [info]: Attempting to GET in ticketRouter
+2023-09-22T14:21:48.697Z [info]: Successfully retreived available tickets with status: pending
+2023-09-22T14:21:56.238Z [info]: Attempting to GET in ticketRouter
+2023-09-22T14:21:56.619Z [info]: Successfully retreived available tickets with status: denied

@@ -9,7 +9,6 @@ const ticketDAO = require('../integration/ticketDAO');
 const MW = require('./middleware/ticketMW');
 
 // Assume we have user token or header
-// TODO ADD JWT TOKEN
 router.post('/', MW.validateTicket, MW.validateUser, (req, res) => {
   logger.info('Trying to post tickets');
   const body = req.body;
@@ -148,7 +147,7 @@ router.put(
               });
             } else {
               ticketDAO
-                .updateTicketByID(ticketID, newStatus)
+                .updateTicketByID(ticketID, newStatus, username)
                 .then((data) => {
                   logger.info(
                     `Successfully updated item: ${ticketID} with status: ${newStatus}`
