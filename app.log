@@ -196,3 +196,130 @@ ValidationException: Query condition missed key schema element: ticket_id
 2023-09-21T15:09:38.883Z [error]: Failed to post ticket because: No description in message or no description in message
 2023-09-21T15:09:55.293Z [info]: Trying to post tickets
 2023-09-21T15:09:55.293Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute
+2023-09-21T18:31:17.807Z [info]: Server is listening on Port: 3000
+2023-09-21T18:31:26.268Z [info]: Trying to login
+2023-09-21T18:31:26.711Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-21T18:40:08.702Z [info]: Server is listening on Port: 3000
+2023-09-21T18:40:11.989Z [info]: Trying to login
+2023-09-21T18:40:12.481Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-21T18:45:33.189Z [info]: Server is listening on Port: 3000
+2023-09-21T18:45:54.144Z [info]: Trying to register
+2023-09-21T18:45:54.883Z [info]: Failed to add user to dynamoDB: ReferenceError: user is not defined
+2023-09-21T18:47:13.930Z [info]: Trying to register
+2023-09-21T18:47:14.319Z [error]: Couldn't create user because username already taken: TigerKing
+2023-09-21T18:47:57.490Z [info]: Trying to register
+2023-09-21T18:47:58.215Z [info]: Failed to add user to dynamoDB: ReferenceError: user is not defined
+2023-09-21T18:55:39.638Z [info]: Server is listening on Port: 3000
+2023-09-21T18:55:52.413Z [info]: Trying to register
+2023-09-21T18:55:52.864Z [error]: Couldn't create user because username already taken: Tyson
+2023-09-21T18:56:26.060Z [info]: Server is listening on Port: 3000
+2023-09-21T18:56:32.207Z [info]: Trying to register
+2023-09-21T18:56:32.637Z [error]: Couldn't create user because username already taken: Tyson
+2023-09-21T18:57:22.801Z [info]: Trying to register
+2023-09-21T18:57:23.496Z [info]: Failed to add user to dynamoDB: ReferenceError: user is not defined
+2023-09-21T18:59:42.474Z [info]: Server is listening on Port: 3000
+2023-09-21T18:59:44.587Z [info]: Trying to register
+2023-09-21T18:59:45.341Z [info]: Failed to add user to dynamoDB: ReferenceError: user is not defined
+2023-09-21T19:10:17.677Z [info]: Server is listening on Port: 3000
+2023-09-21T19:10:32.267Z [info]: Trying to register
+2023-09-21T19:10:33.016Z [info]: Successful POST:
+ {"username":"decker","password":"unicorn","valid":true}
+2023-09-21T19:20:31.187Z [info]: Server is listening on Port: 3000
+2023-09-21T19:20:32.553Z [info]: Trying to login
+2023-09-21T19:20:32.987Z [info]: Succesfull login, current user {"password":"unicorn","username":"decker","role":"employee"}
+2023-09-21T19:21:40.282Z [info]: Trying to login
+2023-09-21T19:21:40.713Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-21T19:21:44.428Z [info]: Trying to login
+2023-09-21T19:21:44.727Z [error]: Username and password do not match
+2023-09-21T19:21:48.215Z [info]: Trying to login
+2023-09-21T19:21:48.647Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-21T20:23:39.748Z [info]: Server is listening on Port: 3000
+2023-09-21T20:23:45.215Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:23:45.216Z [error]: Error because undefined
+2023-09-21T20:24:23.876Z [info]: Server is listening on Port: 3000
+2023-09-21T20:25:01.506Z [info]: Trying to login
+2023-09-21T20:25:01.988Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-21T20:25:35.409Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:25:35.410Z [error]: Error because undefined
+2023-09-21T20:27:26.008Z [info]: Server is listening on Port: 3000
+2023-09-21T20:27:27.585Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:27:27.585Z [error]: Error because undefined
+2023-09-21T20:28:59.055Z [info]: Server is listening on Port: 3000
+2023-09-21T20:29:00.615Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:29:00.616Z [error]: Error because undefined
+2023-09-21T20:29:53.926Z [info]: Server is listening on Port: 3000
+2023-09-21T20:29:56.792Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:29:56.792Z [error]: Error because undefined
+2023-09-21T20:30:15.829Z [info]: Server is listening on Port: 3000
+2023-09-21T20:30:18.746Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:30:18.747Z [error]: Error because undefined
+2023-09-21T20:31:09.743Z [info]: Server is listening on Port: 3000
+2023-09-21T20:31:12.787Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:31:12.787Z [error]: Error because undefined
+2023-09-21T20:34:20.205Z [info]: Server is listening on Port: 3000
+2023-09-21T20:34:24.301Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:34:24.302Z [error]: Error because undefined
+2023-09-21T20:36:11.132Z [info]: Server is listening on Port: 3000
+2023-09-21T20:36:13.764Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:36:13.765Z [error]: Error because undefined
+2023-09-21T20:36:40.698Z [info]: Server is listening on Port: 3000
+2023-09-21T20:37:17.251Z [info]: Server is listening on Port: 3000
+2023-09-21T20:37:19.100Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:37:39.757Z [info]: Server is listening on Port: 3000
+2023-09-21T20:37:47.764Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:38:05.059Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:46:16.856Z [info]: Server is listening on Port: 3000
+2023-09-21T20:46:23.009Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:46:23.010Z [error]: Error because undefined
+2023-09-21T20:47:52.611Z [info]: Server is listening on Port: 3000
+2023-09-21T20:47:54.725Z [info]: Attempting to GET in ticketRouter
+2023-09-21T20:48:34.170Z [info]: Server is listening on Port: 3000
+2023-09-21T20:48:38.164Z [info]: Attempting to GET in ticketRouter
+2023-09-21T21:18:36.142Z [info]: Server is listening on Port: 3000
+2023-09-21T21:18:39.580Z [info]: Attempting to GET in ticketRouter
+2023-09-21T21:18:57.769Z [info]: Attempting to GET in ticketRouter
+2023-09-21T21:20:22.565Z [info]: Attempting to GET in ticketRouter
+2023-09-21T21:21:43.391Z [info]: Attempting to GET in ticketRouter
+2023-09-21T21:21:49.240Z [info]: Attempting to GET in ticketRouter
+2023-09-21T21:21:49.241Z [error]: Error because No valid status in query parameters. Only accept, pending, approved, and denied
+2023-09-21T21:21:54.168Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:10:27.218Z [info]: Server is listening on Port: 3000
+2023-09-22T04:10:51.547Z [info]: Trying to login
+2023-09-22T04:10:52.018Z [info]: Succesfull login, current user {"password":"123456","username":"Alex","role":"employee"}
+2023-09-22T04:11:42.274Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:12:46.389Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:12:57.350Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:12:57.350Z [error]: Error because Need Authorization header with Bearer token
+2023-09-22T04:13:04.395Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:13:10.660Z [info]: Error with jwtUtil JsonWebTokenError: invalid token
+2023-09-22T04:13:10.661Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:13:10.661Z [error]: Error because No valid status in query parameters. Only accept, pending, approved, and denied
+2023-09-22T04:13:19.438Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:13:34.242Z [info]: Error with jwtUtil JsonWebTokenError: invalid token
+2023-09-22T04:13:34.242Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:13:34.242Z [error]: Error because No valid status in query parameters. Only accept, pending, approved, and denied
+2023-09-22T04:13:44.334Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:15:20.292Z [info]: Error with jwtUtil JsonWebTokenError: invalid token
+2023-09-22T04:15:20.293Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:15:20.293Z [error]: Error because No valid status in query parameters. Only accept, pending, approved, and denied
+2023-09-22T04:16:46.946Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:16:46.947Z [error]: Error because Need Authorization header with Bearer token
+2023-09-22T04:16:51.435Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:16:59.255Z [info]: Error with jwtUtil JsonWebTokenError: invalid signature
+2023-09-22T04:16:59.255Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:16:59.256Z [error]: Error because No valid status in query parameters. Only accept, pending, approved, and denied
+2023-09-22T04:17:15.104Z [info]: Server is listening on Port: 3000
+2023-09-22T04:17:17.979Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:17:25.196Z [info]: Error with jwtUtil JsonWebTokenError: invalid token
+2023-09-22T04:17:25.196Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:17:25.197Z [error]: Error because No valid status in query parameters. Only accept, pending, approved, and denied. If just doing GET then means you have invalid token
+2023-09-22T04:17:34.902Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:20:07.802Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:20:14.048Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:20:23.625Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:23:20.173Z [info]: Server is listening on Port: 3000
+2023-09-22T04:23:23.065Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:23:23.522Z [info]: Successfully retreived all tickets for user Alex
+2023-09-22T04:23:33.341Z [info]: Attempting to GET in ticketRouter
+2023-09-22T04:24:31.538Z [info]: Server is listening on Port: 3000
+2023-09-22T04:24:34.162Z [info]: Attempting to GET in ticketRouter
