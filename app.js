@@ -12,12 +12,6 @@ const ticketsRouter = require('./routes/ticketsRouter');
 const bodyParser = require('body-parser');
 server.use(bodyParser.json());
 
-// Test express
-// server.use('/', (req, res) => {
-//   logger.info('In test express endpoint');
-//   res.send('In test server');
-// });
-
 // Using router
 server.use('/login', loginRouter);
 server.use('/register', registerRouter);
