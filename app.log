@@ -448,3 +448,81 @@ ValidationException: Query condition missed key schema element: ticket_id
 2023-09-22T14:43:19.000Z [info]: Trying to post tickets
 2023-09-22T14:43:19.399Z [info]: Successful POST:
  {"amount":97,"desc":"Went to vegas","valid":true,"validUser":true,"role":"employee","username":"Jake"}
+2023-09-22T14:50:00.487Z [info]: Server is listening on Port: 3000
+2023-09-22T14:50:28.097Z [info]: Trying to login
+2023-09-22T14:50:28.551Z [info]: Succesfull login, current user {"password":"123456","username":"Alex","role":"employee"}
+2023-09-22T14:50:51.948Z [info]: Trying to post tickets
+2023-09-22T14:50:52.348Z [info]: Successful POST:
+ {"amount":97,"desc":"Went to vegas","valid":true,"validUser":true,"role":"employee","username":"Alex"}
+2023-09-22T14:51:12.702Z [info]: Trying to post tickets
+2023-09-22T14:51:12.702Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-22T14:51:29.524Z [info]: Attempting to GET in ticketRouter
+2023-09-22T14:51:29.939Z [info]: Successfully retreived available tickets with status: pending
+2023-09-22T15:01:27.508Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:01:27.509Z [error]: Error because newStatus must be defined in body and be either "approved" or "denied"
+2023-09-22T15:01:38.200Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:01:38.592Z [error]: Did not find any ticket with ticketID:42787e6a-0b87-4f16-be09-4c13de6fd948
+2023-09-22T15:02:16.917Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:02:16.917Z [error]: Can't process requests with role: employee
+2023-09-22T15:02:37.336Z [info]: Attempting to GET in ticketRouter
+2023-09-22T15:02:37.742Z [info]: Successfully retreived available tickets with status: pending
+2023-09-22T15:03:05.905Z [info]: Attempting to GET in ticketRouter
+2023-09-22T15:03:06.312Z [info]: Successfully retreived all tickets for user Alex
+2023-09-22T15:03:26.905Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:03:26.905Z [error]: Can't process requests with role: employee
+2023-09-22T15:04:03.904Z [info]: Trying to login
+2023-09-22T15:04:04.332Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-22T15:04:19.819Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:04:20.222Z [error]: Did not find any ticket with ticketID:42787e6a-0b87-4f16-be09-4c13de6fd948
+2023-09-22T15:04:46.460Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:04:47.155Z [info]: Successfully updated item: 95374a13-5f1a-4198-a074-c5d2a9c349f5 with status: denied
+2023-09-22T15:05:00.673Z [info]: Attempting to GET in ticketRouter
+2023-09-22T15:05:01.068Z [info]: Successfully retreived all tickets for user Alex
+2023-09-22T15:05:21.266Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:05:21.684Z [error]: Can not edit ticket that has already been processed! Ticket status: denied
+2023-09-22T15:18:02.619Z [info]: Server is listening on Port: 3000
+2023-09-22T15:21:09.288Z [info]: Trying to post tickets
+2023-09-22T15:21:09.774Z [info]: Successful POST:
+ {"amount":65,"desc":"Went to club","type":"work","valid":true,"validUser":true,"role":"employee","username":"Alex"}
+2023-09-22T15:21:17.629Z [info]: Attempting to GET in ticketRouter
+2023-09-22T15:21:18.035Z [info]: Successfully retreived available tickets with status: pending
+2023-09-22T15:21:42.760Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:21:43.430Z [info]: Successfully updated item: fd8dc93c-01f8-4b62-8426-04f1af045184 with status: denied
+2023-09-22T15:21:48.089Z [info]: Attempting to GET in ticketRouter
+2023-09-22T15:21:48.480Z [info]: Successfully retreived available tickets with status: pending
+2023-09-22T15:21:51.857Z [info]: Attempting to GET in ticketRouter
+2023-09-22T15:21:52.253Z [info]: Successfully retreived available tickets with status: denied
+2023-09-22T15:22:02.673Z [info]: Attempting to GET in ticketRouter
+2023-09-22T15:22:03.092Z [info]: Successfully retreived available tickets with status: pending
+2023-09-22T15:24:30.059Z [info]: Server is listening on Port: 3000
+2023-09-22T15:25:00.416Z [info]: Server is listening on Port: 3000
+2023-09-22T15:25:01.632Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:25:02.083Z [error]: Can not edit ticket that has already been processed! Ticket status: denied
+2023-09-22T15:49:55.467Z [info]: Server is listening on Port: 3000
+2023-09-22T15:49:58.115Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:49:58.543Z [error]: Can not edit ticket that has already been processed! Ticket status: denied
+2023-09-22T15:50:25.192Z [info]: Server is listening on Port: 3000
+2023-09-22T15:50:34.703Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:50:35.151Z [error]: Can not edit ticket that has already been processed! Ticket status: denied
+2023-09-22T15:51:06.358Z [info]: Server is listening on Port: 3000
+2023-09-22T15:51:09.404Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:51:09.864Z [error]: Can not edit ticket that has already been processed! Ticket status: denied
+2023-09-22T15:54:27.253Z [info]: Server is listening on Port: 3000
+2023-09-22T15:54:28.599Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:54:29.041Z [error]: Can not edit ticket that has already been processed! Ticket status: denied
+2023-09-22T15:55:37.382Z [info]: Server is listening on Port: 3000
+2023-09-22T15:55:45.257Z [info]: Attempting to POST in ticketRouter
+2023-09-22T15:55:45.694Z [error]: Can not edit ticket that has already been processed! Ticket status: denied
+2023-09-22T16:01:02.623Z [info]: Server is listening on Port: 3000
+2023-09-22T16:01:06.828Z [info]: Attempting Method: POST : /login
+2023-09-22T16:01:37.888Z [info]: Server is listening on Port: 3000
+2023-09-22T16:01:40.843Z [info]: Trying to login
+2023-09-22T16:01:41.300Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-22T16:03:16.946Z [info]: Server is listening on Port: 3000
+2023-09-22T16:03:23.261Z [info]: Attempting Method: POST : /login
+2023-09-22T16:03:23.262Z [info]: Trying to login
+2023-09-22T16:03:23.709Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-22T16:03:59.117Z [info]: Attempting Method: POST : /tickets
+2023-09-22T16:03:59.121Z [info]: Trying to post tickets
+2023-09-22T16:03:59.528Z [info]: Successful POST:
+ {"amount":6543,"desc":"Vacation","type":"work","valid":true,"validUser":true,"role":"employee","username":"Alex"}
