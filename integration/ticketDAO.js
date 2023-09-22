@@ -8,7 +8,10 @@ AWS.config.update({
 const docClient = new AWS.DynamoDB.DocumentClient();
 // This is table name in dynamoDB
 const TableName = 'tickets-project-1';
-
+// GSI to for status
+const statusGSI = 'status-index';
+// GSI for author in tickets table
+const authorGSI = 'author-index';
 // POST tickets
 // if successful then returns {}, if not then throws error
 function addTicket(
@@ -35,9 +38,12 @@ function addTicket(
   return docClient.put(params).promise();
 }
 
+// This is manager function so they get access to all tickets depending on the status
+// pending, denied, approved
 function getTickets(status) {
   const params = {
     TableName,
+    IndexName: statusGSI,
     KeyConditionExpression: '#status = :status',
     ExpressionAttributeNames: {
       '#status': 'status',
@@ -48,5 +54,19 @@ function getTickets(status) {
   };
   return docClient.query(params).promise();
 }
-
-module.exports = { addTicket, getTickets };
+// Gets all tickets from user using GSI
+function getTicketsByUser(author) {
+  const params = {
+    TableName,
+    IndexName: authorGSI,
+    KeyConditionExpression: '#author = :author',
+    ExpressionAttributeNames: {
+      '#author': 'author',
+    },
+    ExpressionAttributeValues: {
+      ':author': author,
+    },
+  };
+  return docClient.query(params).promise();
+}
+module.exports = { addTicket, getTickets, getTicketsByUser };
