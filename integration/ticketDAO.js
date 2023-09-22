@@ -79,7 +79,7 @@ function getTicketByID(ticket_id) {
   };
   return docClient.get(params).promise();
 }
-// TODO ADD WHO CHANGED THE STATUS TO RESOLVER_ID
+
 function updateTicketByID(ticket_id, newStatus, resolver_id) {
   let params = {
     TableName,
