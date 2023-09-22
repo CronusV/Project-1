@@ -10,6 +10,7 @@ const MW = require('./middleware/logRegMW');
 router.post('/', MW.validateUserPass, (req, res) => {
   logger.info('Trying to register');
   const newUser = req.body;
+  const roleDefault = 'employee';
   if (newUser.valid) {
     userDAO
       .getUser(newUser.username)
@@ -22,7 +23,7 @@ router.post('/', MW.validateUserPass, (req, res) => {
             .then((data) => {
               // If valid then data is simply {}
               // Create token (jwt)
-              const token = jwtUtil.createJWT(newUser.username, newUser.role);
+              const token = jwtUtil.createJWT(newUser.username, roleDefault);
               logger.info(`Successful POST:\n ${JSON.stringify(newUser)}`);
               res.status(201).send({
                 message: 'Successfully created user',
