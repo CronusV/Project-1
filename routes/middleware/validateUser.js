@@ -32,6 +32,8 @@ async function validateUser(req, res, next) {
     body.validUser = false;
     body.invalidMessage = 'Need Authorization header with Bearer token';
   }
+  console.log(`in validate user MW ${body.invalidMessage}`);
+  console.log(`in validate user MW ${body.validUser}`);
   next();
 }
 

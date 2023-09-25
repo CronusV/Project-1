@@ -64,9 +64,49 @@ function validateTicketIDQuery(req) {
   return idQuery;
 }
 
+// NEW FUNCTIONS FOR PICTURE and TEST
+function validateTicketPicture(req) {
+  return req.files;
+}
+
+function validateTicketForm(req) {
+  console.log(`This is body in util ${JSON.stringify(req.body)}`);
+  const ticket = JSON.parse(req.body.ticket);
+  const invalidMessages = [];
+  const ticketCheck = {};
+
+  if (ticket) {
+    // do error checking for ticket here
+    if (!ticket.amount || ticket.amount === '') {
+      invalidMessages.push('No amount in ticket or no amount attribute');
+    }
+    if (!ticket.desc || ticket.desc === '') {
+      invalidMessages.push(
+        'No description in message or no description in message'
+      );
+    }
+
+    // Add messages if error
+
+    if (invalidMessages.length > 0) {
+      ticketCheck.invalidMessage = `${invalidMessages.join(', and ')}`;
+      ticketCheck.valid = false;
+    } else {
+      ticketCheck.valid = true;
+    }
+  } else {
+    invalidMessages.push('Do not have ticket in form data as key');
+    ticketCheck.valid = false;
+  }
+
+  ticketCheck.invalidMessage = `${invalidMessages.join(', and ')}`;
+  return ticketCheck;
+}
 module.exports = {
   validateTicket,
   validateNewTicketStatus,
   validateGetTickets,
   validateTicketIDQuery,
+  validateTicketPicture,
+  validateTicketForm,
 };

@@ -8,10 +8,26 @@ AWS.config.update({
 const docClient = new AWS.DynamoDB.DocumentClient();
 // This is table name in dynamoDB
 const TableName = 'tickets-project-1';
+// Table name for s3 bucket
+const Bucket = 'project-1-s3-tickets';
 // GSI to for status
 const statusGSI = 'status-index';
 // GSI for author in tickets table
 const authorGSI = 'author-index';
+
+const s3 = new AWS.S3();
+
+// Post image to s3
+function addImage(rawImageInfo, image_id, ContentType) {
+  const params = {
+    Bucket,
+    Key: image_id,
+    Body: rawImageInfo,
+    ContentType,
+  };
+  s3.upload(params).promise();
+}
+
 // POST tickets
 // if successful then returns {}, if not then throws error
 function addTicket(
@@ -21,7 +37,8 @@ function addTicket(
   author,
   type = 'none',
   status = 'pending',
-  resolver_id = 0
+  resolver_id = 0,
+  picture_id = 0
 ) {
   const params = {
     TableName,
@@ -33,6 +50,7 @@ function addTicket(
       type,
       status,
       resolver_id,
+      picture_id,
     },
   };
   return docClient.put(params).promise();
@@ -103,4 +121,5 @@ module.exports = {
   getTicketsByUser,
   getTicketByID,
   updateTicketByID,
+  addImage,
 };
