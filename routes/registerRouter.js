@@ -5,13 +5,14 @@ const jwtUtil = require('../utils/jwtUtil');
 const logger = require('../utils/logger');
 
 const userDAO = require('../integration/userDAO');
-const MW = require('./middleware/logRegMW');
+const loginUtil = require('../utils/loginUtil');
 
-router.post('/', MW.validateUserPass, (req, res) => {
+router.post('/', (req, res) => {
   logger.info('Trying to register');
   const newUser = req.body;
   const roleDefault = 'employee';
-  if (newUser.valid) {
+  const validReq = loginUtil.validateUserPass(req);
+  if (validReq) {
     userDAO
       .getUser(newUser.username)
       .then((data) => {
