@@ -1,5 +1,4 @@
-// Check to see that the post request has a valid username and password
-function validateUserPass(req, res, next) {
+function validateUserPass(req) {
   const body = req.body;
   if (
     !body.username ||
@@ -7,11 +6,10 @@ function validateUserPass(req, res, next) {
     body.username === '' ||
     body.password === ''
   ) {
-    body.valid = false;
+    return false;
   } else {
-    body.valid = true;
+    return true;
   }
-  next();
 }
 
 module.exports = { validateUserPass };
