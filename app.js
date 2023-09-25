@@ -19,6 +19,7 @@ server.use(MW.logRequest);
 server.use('/login', loginRouter);
 server.use('/register', registerRouter);
 server.use('/tickets', ticketsRouter);
+
 // Spin up server
 server.listen(PORT, () => {
   logger.info(`Server is listening on Port: ${PORT}`);

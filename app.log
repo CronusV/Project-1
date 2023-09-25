@@ -724,3 +724,277 @@ ValidationException: Query condition missed key schema element: ticket_id
 2023-09-25T05:16:53.624Z [info]: Attempting Method: GET : /tickets
 2023-09-25T05:16:53.625Z [info]: Attempting to GET in ticketRouter
 2023-09-25T05:16:53.935Z [info]: Successfully retreived all tickets for user Alex
+2023-09-25T15:45:01.845Z [info]: Server is listening on Port: 3000
+2023-09-25T15:45:04.599Z [info]: Attempting Method: POST : /tickets
+2023-09-25T15:45:04.605Z [info]: Trying to post tickets
+2023-09-25T15:45:04.606Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-25T15:45:07.918Z [info]: Attempting Method: POST : /tickets
+2023-09-25T15:45:07.920Z [info]: Trying to post tickets
+2023-09-25T15:45:07.920Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-25T15:45:14.580Z [info]: Attempting Method: POST : /tickets
+2023-09-25T15:45:14.581Z [info]: Trying to post tickets
+2023-09-25T15:45:14.582Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-25T15:46:15.050Z [info]: Server is listening on Port: 3000
+2023-09-25T15:46:22.285Z [info]: Attempting Method: POST : /tickets
+2023-09-25T15:46:22.289Z [info]: Trying to post tickets
+2023-09-25T15:46:22.290Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-25T15:46:36.724Z [info]: Server is listening on Port: 3000
+2023-09-25T15:46:42.029Z [info]: Attempting Method: POST : /tickets
+2023-09-25T15:46:42.034Z [info]: Trying to post tickets
+2023-09-25T15:46:42.035Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-25T16:01:29.486Z [info]: Server is listening on Port: 3000
+2023-09-25T16:01:36.735Z [info]: Attempting Method: POST : /test
+2023-09-25T16:01:49.769Z [info]: Attempting Method: POST : /test
+2023-09-25T16:23:00.249Z [info]: Server is listening on Port: 3000
+2023-09-25T16:23:04.686Z [info]: Attempting Method: POST : /test
+2023-09-25T16:24:15.250Z [info]: Server is listening on Port: 3000
+2023-09-25T16:24:39.173Z [info]: Attempting Method: POST : /test
+2023-09-25T16:25:14.650Z [info]: Attempting Method: POST : /test
+2023-09-25T16:26:39.816Z [info]: Server is listening on Port: 3000
+2023-09-25T16:26:41.915Z [info]: Attempting Method: POST : /test
+2023-09-25T16:27:07.881Z [info]: Server is listening on Port: 3000
+2023-09-25T16:27:13.512Z [info]: Attempting Method: POST : /test
+2023-09-25T16:27:42.232Z [info]: Server is listening on Port: 3000
+2023-09-25T16:27:43.763Z [info]: Attempting Method: POST : /test
+2023-09-25T16:29:13.485Z [info]: Server is listening on Port: 3000
+2023-09-25T16:29:22.348Z [info]: Attempting Method: POST : /test
+2023-09-25T16:29:41.285Z [info]: Server is listening on Port: 3000
+2023-09-25T16:29:42.543Z [info]: Attempting Method: POST : /test
+2023-09-25T16:30:34.988Z [info]: Server is listening on Port: 3000
+2023-09-25T16:30:35.564Z [info]: Attempting Method: POST : /test
+2023-09-25T16:31:10.858Z [info]: Server is listening on Port: 3000
+2023-09-25T16:31:12.468Z [info]: Attempting Method: POST : /test
+2023-09-25T16:31:36.511Z [info]: Server is listening on Port: 3000
+2023-09-25T16:31:49.532Z [info]: Attempting Method: POST : /test
+2023-09-25T16:32:20.324Z [info]: Server is listening on Port: 3000
+2023-09-25T16:32:22.960Z [info]: Attempting Method: POST : /test
+2023-09-25T16:33:11.089Z [info]: Server is listening on Port: 3000
+2023-09-25T16:33:14.180Z [info]: Attempting Method: POST : /test
+2023-09-25T16:33:47.251Z [info]: Server is listening on Port: 3000
+2023-09-25T16:33:48.862Z [info]: Attempting Method: POST : /test
+2023-09-25T16:34:09.062Z [info]: Server is listening on Port: 3000
+2023-09-25T16:34:16.515Z [info]: Attempting Method: POST : /test
+2023-09-25T16:36:04.750Z [info]: Server is listening on Port: 3000
+2023-09-25T16:36:05.777Z [info]: Attempting Method: POST : /test
+2023-09-25T16:36:27.282Z [info]: Server is listening on Port: 3000
+2023-09-25T16:36:28.591Z [info]: Attempting Method: POST : /test
+2023-09-25T16:36:59.649Z [info]: Server is listening on Port: 3000
+2023-09-25T16:37:03.461Z [info]: Attempting Method: POST : /test
+2023-09-25T16:50:36.999Z [info]: Server is listening on Port: 3000
+2023-09-25T16:50:39.038Z [info]: Attempting Method: POST : /test
+2023-09-25T16:51:08.461Z [info]: Attempting Method: POST : /test
+2023-09-25T16:53:01.717Z [info]: Server is listening on Port: 3000
+2023-09-25T16:53:04.546Z [info]: Attempting Method: POST : /test
+2023-09-25T16:53:56.998Z [info]: Server is listening on Port: 3000
+2023-09-25T16:54:05.040Z [info]: Attempting Method: POST : /test
+2023-09-25T16:54:23.891Z [info]: Server is listening on Port: 3000
+2023-09-25T16:54:27.240Z [info]: Attempting Method: POST : /test
+2023-09-25T18:42:59.424Z [info]: Server is listening on Port: 3000
+2023-09-25T18:43:08.838Z [info]: Attempting Method: POST : /test
+2023-09-25T18:43:08.846Z [error]: Error because undefined
+2023-09-25T18:43:40.984Z [info]: Attempting Method: POST : /test
+2023-09-25T18:43:40.989Z [error]: Error because undefined
+2023-09-25T18:44:26.311Z [info]: Server is listening on Port: 3000
+2023-09-25T18:44:29.624Z [info]: Attempting Method: POST : /test
+2023-09-25T18:44:29.632Z [error]: Error because undefined
+2023-09-25T18:44:55.388Z [info]: Server is listening on Port: 3000
+2023-09-25T18:44:55.986Z [info]: Attempting Method: POST : /test
+2023-09-25T18:44:55.994Z [error]: Error because undefined
+2023-09-25T18:45:30.236Z [info]: Server is listening on Port: 3000
+2023-09-25T18:45:30.847Z [info]: Attempting Method: POST : /test
+2023-09-25T18:45:30.857Z [error]: Error because undefined
+2023-09-25T18:46:18.161Z [info]: Server is listening on Port: 3000
+2023-09-25T18:46:22.160Z [info]: Attempting Method: POST : /test
+2023-09-25T18:47:52.853Z [info]: Server is listening on Port: 3000
+2023-09-25T18:51:13.654Z [info]: Attempting Method: POST : /test
+2023-09-25T18:51:19.397Z [info]: Server is listening on Port: 3000
+2023-09-25T18:51:20.307Z [info]: Attempting Method: POST : /test
+2023-09-25T18:52:49.593Z [info]: Server is listening on Port: 3000
+2023-09-25T18:52:53.645Z [info]: Attempting Method: POST : /test
+2023-09-25T18:57:33.840Z [info]: Server is listening on Port: 3000
+2023-09-25T18:57:36.988Z [info]: Attempting Method: POST : /test
+2023-09-25T19:01:12.057Z [info]: Server is listening on Port: 3000
+2023-09-25T19:01:13.862Z [info]: Attempting Method: POST : /test
+2023-09-25T19:01:47.902Z [info]: Server is listening on Port: 3000
+2023-09-25T19:01:48.751Z [info]: Attempting Method: POST : /test
+2023-09-25T19:02:51.719Z [info]: Server is listening on Port: 3000
+2023-09-25T19:02:52.732Z [info]: Attempting Method: POST : /test
+2023-09-25T19:03:18.215Z [info]: Server is listening on Port: 3000
+2023-09-25T19:03:18.984Z [info]: Attempting Method: POST : /test
+2023-09-25T19:05:11.561Z [info]: Server is listening on Port: 3000
+2023-09-25T19:05:12.521Z [info]: Attempting Method: POST : /test
+2023-09-25T19:06:28.995Z [info]: Server is listening on Port: 3000
+2023-09-25T19:06:31.128Z [info]: Attempting Method: POST : /test
+2023-09-25T19:11:25.588Z [info]: Server is listening on Port: 3000
+2023-09-25T19:11:27.921Z [info]: Attempting Method: POST : /test
+2023-09-25T19:11:49.757Z [info]: Server is listening on Port: 3000
+2023-09-25T19:11:54.002Z [info]: Attempting Method: POST : /test
+2023-09-25T19:12:12.855Z [info]: Server is listening on Port: 3000
+2023-09-25T19:12:14.296Z [info]: Attempting Method: POST : /test
+2023-09-25T19:12:14.303Z [info]: Failed to add ticket to dynamoDB: TypeError: Cannot read properties of undefined (reading 'amount')
+2023-09-25T19:13:29.850Z [info]: Attempting Method: POST : /test
+2023-09-25T19:13:29.853Z [info]: Failed to add ticket to dynamoDB: TypeError: Cannot read properties of undefined (reading 'amount')
+2023-09-25T19:15:45.531Z [info]: Server is listening on Port: 3000
+2023-09-25T19:15:49.227Z [info]: Attempting Method: POST : /test
+2023-09-25T19:15:49.235Z [error]: Error because undefined
+2023-09-25T19:20:50.032Z [info]: Server is listening on Port: 3000
+2023-09-25T19:20:52.464Z [info]: Attempting Method: POST : /test
+2023-09-25T19:20:52.471Z [info]: Failed to add ticket to dynamoDB: TypeError: Cannot read properties of undefined (reading 'amount')
+2023-09-25T19:21:29.883Z [info]: Server is listening on Port: 3000
+2023-09-25T19:21:37.224Z [info]: Attempting Method: POST : /test
+2023-09-25T19:21:37.230Z [info]: Failed to add ticket to dynamoDB: TypeError: Cannot read properties of undefined (reading 'amount')
+2023-09-25T19:22:45.762Z [info]: Server is listening on Port: 3000
+2023-09-25T19:22:50.221Z [info]: Attempting Method: POST : /test
+2023-09-25T19:22:50.227Z [info]: Failed to add ticket to dynamoDB: TypeError: Cannot read properties of undefined (reading 'amount')
+2023-09-25T19:23:22.977Z [info]: Attempting Method: POST : /test
+2023-09-25T19:23:22.980Z [info]: Failed to add ticket to dynamoDB: TypeError: Cannot read properties of undefined (reading 'amount')
+2023-09-25T19:23:30.634Z [info]: Attempting Method: POST : /test
+2023-09-25T19:23:30.637Z [info]: Failed to add ticket to dynamoDB: TypeError: Cannot read properties of undefined (reading 'amount')
+2023-09-25T19:23:44.421Z [info]: Attempting Method: POST : /test
+2023-09-25T19:23:44.424Z [info]: Failed to add ticket to dynamoDB: TypeError: Cannot read properties of undefined (reading 'amount')
+2023-09-25T19:24:46.430Z [info]: Server is listening on Port: 3000
+2023-09-25T19:24:49.037Z [info]: Attempting Method: POST : /test
+2023-09-25T19:24:49.043Z [info]: Failed to add ticket to dynamoDB: TypeError: Cannot read properties of undefined (reading 'amount')
+2023-09-25T19:26:42.759Z [info]: Server is listening on Port: 3000
+2023-09-25T19:26:47.577Z [info]: Attempting Method: POST : /test
+2023-09-25T19:26:47.583Z [info]: Failed to add ticket to dynamoDB: TypeError: Cannot read properties of undefined (reading 'amount')
+2023-09-25T19:27:13.111Z [info]: Server is listening on Port: 3000
+2023-09-25T19:27:13.743Z [info]: Attempting Method: POST : /test
+2023-09-25T19:27:54.089Z [info]: Server is listening on Port: 3000
+2023-09-25T19:27:56.543Z [info]: Attempting Method: POST : /test
+2023-09-25T19:27:56.549Z [info]: Failed to add ticket to dynamoDB: TypeError: Cannot read properties of undefined (reading 'amount')
+2023-09-25T19:54:19.928Z [info]: Server is listening on Port: 3000
+2023-09-25T19:54:22.922Z [info]: Attempting Method: POST : /test
+2023-09-25T19:54:51.009Z [info]: Server is listening on Port: 3000
+2023-09-25T19:54:53.184Z [info]: Attempting Method: POST : /test
+2023-09-25T19:54:53.745Z [info]: Failed to add ticket to dynamoDB: ReferenceError: body is not defined
+2023-09-25T19:55:39.553Z [info]: Server is listening on Port: 3000
+2023-09-25T19:55:40.931Z [info]: Attempting Method: POST : /test
+2023-09-25T19:56:50.386Z [info]: Server is listening on Port: 3000
+2023-09-25T19:56:52.743Z [info]: Attempting Method: POST : /test
+2023-09-25T19:57:13.387Z [info]: Server is listening on Port: 3000
+2023-09-25T19:57:34.279Z [info]: Attempting Method: POST : /test
+2023-09-25T19:57:58.377Z [info]: Server is listening on Port: 3000
+2023-09-25T19:57:59.801Z [info]: Attempting Method: POST : /test
+2023-09-25T19:58:58.469Z [info]: Server is listening on Port: 3000
+2023-09-25T19:58:59.488Z [info]: Attempting Method: POST : /test
+2023-09-25T19:59:17.879Z [info]: Server is listening on Port: 3000
+2023-09-25T19:59:19.840Z [info]: Attempting Method: POST : /test
+2023-09-25T19:59:58.267Z [info]: Server is listening on Port: 3000
+2023-09-25T20:00:01.730Z [info]: Attempting Method: POST : /test
+2023-09-25T20:00:26.022Z [info]: Attempting Method: POST : /test
+2023-09-25T20:00:31.234Z [info]: Attempting Method: POST : /test
+2023-09-25T20:01:17.270Z [info]: Server is listening on Port: 3000
+2023-09-25T20:01:18.918Z [info]: Attempting Method: POST : /test
+2023-09-25T20:02:05.362Z [info]: Server is listening on Port: 3000
+2023-09-25T20:02:07.733Z [info]: Attempting Method: POST : /test
+2023-09-25T20:04:21.261Z [info]: Server is listening on Port: 3000
+2023-09-25T20:04:21.821Z [info]: Attempting Method: POST : /test
+2023-09-25T20:05:23.494Z [info]: Server is listening on Port: 3000
+2023-09-25T20:05:25.418Z [info]: Attempting Method: POST : /test
+2023-09-25T20:06:20.788Z [info]: Server is listening on Port: 3000
+2023-09-25T20:06:21.463Z [info]: Attempting Method: POST : /test
+2023-09-25T20:06:21.474Z [error]: Error because No amount in ticket or no amount attribute
+2023-09-25T20:07:23.926Z [info]: Attempting Method: POST : /test
+2023-09-25T20:07:42.339Z [info]: Attempting Method: POST : /test
+2023-09-25T20:07:42.343Z [error]: Error because No amount in ticket or no amount attribute
+2023-09-25T20:07:49.921Z [info]: Attempting Method: POST : /test
+2023-09-25T20:07:49.924Z [error]: Error because No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-25T20:07:54.452Z [info]: Attempting Method: POST : /test
+2023-09-25T20:07:58.086Z [info]: Attempting Method: POST : /test
+2023-09-25T20:07:58.566Z [info]: Failed to add ticket to dynamoDB: ReferenceError: body is not defined
+2023-09-25T20:09:32.172Z [info]: Server is listening on Port: 3000
+2023-09-25T20:09:33.050Z [info]: Attempting Method: POST : /test
+2023-09-25T20:09:33.500Z [info]: Failed to add ticket to dynamoDB: ReferenceError: body is not defined
+2023-09-25T20:11:23.362Z [info]: Server is listening on Port: 3000
+2023-09-25T20:11:24.587Z [info]: Attempting Method: POST : /test
+2023-09-25T20:11:25.058Z [info]: Failed to add ticket to dynamoDB: ReferenceError: body is not defined
+2023-09-25T20:12:28.505Z [info]: Server is listening on Port: 3000
+2023-09-25T20:12:31.000Z [info]: Attempting Method: POST : /test
+2023-09-25T20:12:31.500Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 6343435,\n    \"desc\" : \"Devil in a new dress\",\n    \"type\" : \"work (maybe)\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T20:18:19.908Z [info]: Server is listening on Port: 3000
+2023-09-25T20:18:27.567Z [info]: Attempting Method: POST : /test
+2023-09-25T20:18:28.023Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 6343435,\n    \"desc\" : \"Suit\",\n    \"type\" : \"work (maybe)\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T20:36:48.149Z [info]: Server is listening on Port: 3000
+2023-09-25T20:36:50.585Z [info]: Attempting Method: POST : /test
+2023-09-25T20:38:07.195Z [info]: Server is listening on Port: 3000
+2023-09-25T20:38:10.952Z [info]: Attempting Method: POST : /test
+2023-09-25T20:40:03.416Z [info]: Server is listening on Port: 3000
+2023-09-25T20:40:06.962Z [info]: Attempting Method: POST : /test
+2023-09-25T20:40:43.766Z [info]: Server is listening on Port: 3000
+2023-09-25T20:40:46.882Z [info]: Attempting Method: POST : /test
+2023-09-25T20:45:17.614Z [info]: Server is listening on Port: 3000
+2023-09-25T20:45:20.342Z [info]: Attempting Method: POST : /test
+2023-09-25T20:45:45.658Z [info]: Server is listening on Port: 3000
+2023-09-25T20:45:48.113Z [info]: Attempting Method: POST : /test
+2023-09-25T20:52:29.506Z [info]: Server is listening on Port: 3000
+2023-09-25T20:52:35.026Z [info]: Attempting Method: POST : /test
+2023-09-25T20:55:17.575Z [info]: Server is listening on Port: 3000
+2023-09-25T20:55:20.017Z [info]: Attempting Method: POST : /test
+2023-09-25T21:21:13.365Z [info]: Server is listening on Port: 3000
+2023-09-25T21:21:16.424Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:22:29.155Z [info]: Server is listening on Port: 3000
+2023-09-25T21:22:30.931Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:22:31.389Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:24:01.725Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:24:01.728Z [error]: Error because No amount in ticket or no amount attribute
+2023-09-25T21:24:16.343Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:24:16.346Z [error]: Error because No amount in ticket or no amount attribute
+2023-09-25T21:24:29.390Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:24:29.393Z [error]: Error because No description in message or no description in message
+2023-09-25T21:24:58.000Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:26:37.410Z [info]: Server is listening on Port: 3000
+2023-09-25T21:26:38.829Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:26:39.278Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:28:29.002Z [info]: Server is listening on Port: 3000
+2023-09-25T21:28:31.919Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:28:32.368Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:28:34.496Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:28:34.498Z [error]: Error because Do not have ticket in form data as key
+2023-09-25T21:31:20.962Z [info]: Server is listening on Port: 3000
+2023-09-25T21:31:24.427Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:31:24.887Z [info]: Successfully added ticket with image
+2023-09-25T21:32:03.734Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:32:04.155Z [info]: Successfully added ticket with image
+2023-09-25T21:33:43.954Z [info]: Server is listening on Port: 3000
+2023-09-25T21:33:47.577Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:35:15.702Z [info]: Server is listening on Port: 3000
+2023-09-25T21:35:19.719Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:36:24.696Z [info]: Server is listening on Port: 3000
+2023-09-25T21:36:37.058Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:37:20.749Z [info]: Server is listening on Port: 3000
+2023-09-25T21:37:21.873Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:37:22.344Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:38:30.577Z [info]: Server is listening on Port: 3000
+2023-09-25T21:38:33.546Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:38:34.004Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:38:36.678Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:38:37.086Z [info]: Successfully added ticket with image
+2023-09-25T21:38:39.784Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:38:39.787Z [error]: Error because No description in message or no description in message
+2023-09-25T21:39:48.204Z [info]: Server is listening on Port: 3000
+2023-09-25T21:40:04.840Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:40:04.848Z [error]: Error because No description in message or no description in message
+2023-09-25T21:40:13.046Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:40:13.481Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:40:35.958Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:40:36.373Z [info]: Successfully added ticket with image
+2023-09-25T21:42:13.556Z [info]: Server is listening on Port: 3000
+2023-09-25T21:42:23.392Z [info]: Attempting Method: POST : /login
+2023-09-25T21:42:23.393Z [info]: Trying to login
+2023-09-25T21:42:23.393Z [error]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-25T21:42:26.659Z [info]: Attempting Method: POST : /login
+2023-09-25T21:42:26.660Z [info]: Trying to login
+2023-09-25T21:42:27.106Z [error]: Username and password do not match
+2023-09-25T21:42:29.362Z [info]: Attempting Method: POST : /login
+2023-09-25T21:42:29.362Z [info]: Trying to login
+2023-09-25T21:42:29.757Z [info]: Succesfull login, current user {"password":"123456","username":"Alex","role":"employee"}

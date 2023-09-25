@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const jwtUtil = require('../utils/jwtUtil');
+const fileUpload = require('express-fileupload');
+// Limits on file upload
+// router.use(fileUpload({ limits: { fileSize: 50 * 1024 * 1024 } }));
 const uuid = require('uuid');
 // Logger
 const logger = require('../utils/logger');
@@ -10,105 +12,89 @@ const validateMW = require('./middleware/validateUser');
 const ticketUtil = require('../utils/ticketUtil');
 
 // Assume we have user token or header
-router.post('/', validateMW.validateUser, (req, res) => {
-  logger.info('Trying to post tickets');
-  const body = req.body;
-  // const valid = body.valid;
-  const validTicket = ticketUtil.validateTicket(req);
-  if (body.validUser) {
-    if (validTicket.valid) {
-      // ASSUME WE HAVE AUTHOR SOMEWHERE (probably jwt token)
-      const ticket_id = uuid.v4();
-      ticketDAO
-        .addTicket(ticket_id, body.amount, body.desc, body.username, body.type)
-        .then((data) => {
-          // if valid then data is simply {}
-          logger.info(`Successful POST:\n ${JSON.stringify(body)}`);
-          res.status(201).send({
-            message: 'Successfully created ticket',
-            ticket_id,
-          });
-        })
-        .catch((err) => {
-          logger.info(`Failed to add ticket to dynamoDB: ${err}`);
-          res.status(400).send({ message: `Failed to add ticket in dynamoDB` });
-        });
-    } else {
-      logger.error(
-        `Failed to post ticket because: ${validTicket.invalidMessage}`
-      );
-      res.status(400).send({
-        message: `Failed to post ticket because: ${validTicket.invalidMessage}`,
-      });
-    }
-  } else {
-    logger.error(`Error because ${body.invalidMessage}`);
-    res.status(400).send({ message: `Error because ${body.invalidMessage}` });
-  }
-});
 
-// Get all tickets. If manager you have access to all tickets, if user you can only access
-// your tickets
-// this endpoint only accessible with valid token (JWT)
-router.get('/', validateMW.validateUser, (req, res) => {
-  logger.info('Attempting to GET in ticketRouter');
-  const body = req.body;
-  const validTicket = ticketUtil.validateGetTickets(req);
-  if (body.validUser) {
-    const userRole = body.role;
-    const userStatus = validTicket.status;
-    const username = body.username;
-    if (userRole === 'manager') {
-      if (validTicket.valid) {
-        ticketDAO
-          .getTickets(userStatus)
-          .then((data) => {
-            logger.info(
-              `Successfully retreived available tickets with status: ${userStatus}`
-            );
-            res.status(200).send({
-              message: `Successfully retreived available tickets with status: ${userStatus}`,
-              tickets: data.Items,
-            });
-          })
-          .catch((err) => {
-            logger.error(
-              `Couldn't get ALL tickets from dynamoDB, Error:${err}`
-            );
-            res
-              .status(400)
-              .send(`Couldn't get ALL tickets from dynamoDB, Error:${err}`);
-          });
-      } else {
-        logger.error(`Error because ${validTicket.invalidMessage}`);
-        res.status(400).send({ message: validTicket.invalidMessage });
-      }
-    } else if (userRole === 'employee') {
-      ticketDAO
-        .getTicketsByUser(username)
-        .then((data) => {
-          logger.info(
-            `Successfully retreived all tickets for user ${username}`
-          );
-          res.status(200).send({
-            message: `Successfully retreived all tickets for user ${username}`,
-            tickets: data.Items,
-          });
-        })
-        .catch((err) => {
-          logger.error(
-            `Couldn't get ALL tickets for user from dynamoDB: ${err} `
-          );
-          res.status(400).send({
-            message: `Couldn't get ALL tickets for user from database, try again later`,
-          });
-        });
+router.post(
+  '/',
+  fileUpload({ limits: { fileSize: 50 * 1024 * 1024 } }),
+  validateMW.validateUser,
+  async (req, res) => {
+    const body = req.body;
+    // Test ticket with this
+    const validateTicket = ticketUtil.validateTicketForm(req);
+    // Test to see if there is an file with
+    const picture = ticketUtil.validateTicketPicture(req);
+    // Test User with middleware
+    const validUser = req.body.validUser;
+    // User / input validation
+    if (!validUser) {
+      logger.error(`Error because ${req.body.invalidMessage}`);
+      res.status(400).send(`Error because ${req.body.invalidMessage}`);
+      return;
     }
-  } else {
-    logger.error(`Error because ${body.invalidMessage}`);
-    res.status(400).send({ message: `Error because ${body.invalidMessage}` });
+    if (!validateTicket.valid) {
+      logger.error(`Error because ${validateTicket.invalidMessage}`);
+      res
+        .status(400)
+        .send({ message: `Error because ${validateTicket.invalidMessage}` });
+      return;
+    }
+
+    const ticket = JSON.parse(req.body.ticket);
+    // ASSUME WE HAVE AUTHOR SOMEWHERE (probably jwt token)
+    const ticket_id = uuid.v4();
+    // Check if we want to send with or without picture
+    if (picture) {
+      const picture_id = uuid.v4();
+      contentType = req.files.file.mimetype;
+      // buffer: Buffer.from(req.files.file.data)
+      try {
+        // Success returns undefined
+        const pictureReq = await ticketDAO.addImage(
+          Buffer.from(req.files.file.data),
+          picture_id,
+          contentType
+        );
+        // upload ticket
+        const dataTicket = await ticketDAO.addTicket(
+          ticket_id,
+          ticket.amount,
+          ticket.desc,
+          body.username,
+          ticket.type,
+          undefined,
+          ticket.resolver_id,
+          picture_id
+        );
+        logger.info('Successfully added ticket with image');
+        res
+          .status(200)
+          .send({ message: 'Successfully added ticket with image' });
+      } catch (err) {
+        logger.info(`Failed to add image to s3: ${err}`);
+        res.status(400).send({ message: `Failed to add image to s3: ${err}` });
+      }
+    } else {
+      try {
+        const dataTicket = await ticketDAO.addTicket(
+          ticket_id,
+          ticket.amount,
+          ticket.desc,
+          body.username,
+          ticket.type
+        );
+        // if valid then data is simply {}
+        logger.info(`Successful POST:\n ${JSON.stringify(body)}`);
+        res.status(201).send({
+          message: 'Successfully created ticket',
+          ticket_id,
+        });
+      } catch (err) {
+        logger.info(`Failed to add ticket to dynamoDB: ${err}`);
+        res.status(400).send({ message: `Failed to add ticket in dynamoDB` });
+      }
+    }
   }
-});
+);
 //This takes care of changing requests
 router.put('/', validateMW.validateUser, (req, res) => {
   logger.info('Attempting to PUT in ticketRouter');
