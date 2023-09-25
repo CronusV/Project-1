@@ -570,3 +570,157 @@ ValidationException: Query condition missed key schema element: ticket_id
 2023-09-22T21:23:53.232Z [info]: Attempting Method: GET : /tickets?status=pending
 2023-09-22T21:23:53.234Z [info]: Attempting to GET in ticketRouter
 2023-09-22T21:23:53.636Z [info]: Successfully retreived available tickets with status: pending
+2023-09-25T03:54:17.989Z [info]: Server is listening on Port: 3000
+2023-09-25T03:54:25.502Z [info]: Attempting Method: POST : /login
+2023-09-25T03:54:25.502Z [info]: Trying to login
+2023-09-25T03:54:25.968Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser2","role":"manager"}
+2023-09-25T03:54:29.461Z [info]: Attempting Method: POST : /login
+2023-09-25T03:54:29.461Z [info]: Trying to login
+2023-09-25T03:54:29.462Z [error]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-25T03:54:32.233Z [info]: Attempting Method: POST : /login
+2023-09-25T03:54:32.233Z [info]: Trying to login
+2023-09-25T03:54:32.632Z [error]: Username and password do not match
+2023-09-25T03:54:36.993Z [info]: Attempting Method: POST : /login
+2023-09-25T03:54:36.993Z [info]: Trying to login
+2023-09-25T03:54:36.993Z [error]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-25T03:54:39.233Z [info]: Attempting Method: POST : /login
+2023-09-25T03:54:39.233Z [info]: Trying to login
+2023-09-25T03:54:39.641Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser2","role":"manager"}
+2023-09-25T03:57:07.164Z [info]: Server is listening on Port: 3000
+2023-09-25T03:57:16.899Z [info]: Attempting Method: POST : /register
+2023-09-25T03:57:16.899Z [info]: Trying to register
+2023-09-25T03:57:17.642Z [info]: Successful POST:
+ {"username":"Jake123","password":"123456"}
+2023-09-25T03:57:22.502Z [info]: Attempting Method: POST : /register
+2023-09-25T03:57:22.503Z [info]: Trying to register
+2023-09-25T03:57:22.958Z [error]: Couldn't create user because username already taken: Alex
+2023-09-25T03:57:27.824Z [info]: Attempting Method: POST : /register
+2023-09-25T03:57:27.825Z [info]: Trying to register
+2023-09-25T03:57:27.825Z [error]: Failed to register because either no username or password
+    or empty strings in those values
+2023-09-25T03:57:38.479Z [info]: Attempting Method: POST : /register
+2023-09-25T03:57:38.479Z [info]: Trying to register
+2023-09-25T03:57:38.890Z [error]: Couldn't create user because username already taken: Alex
+2023-09-25T03:57:49.659Z [info]: Server is listening on Port: 3000
+2023-09-25T04:52:55.190Z [info]: Server is listening on Port: 3000
+2023-09-25T04:53:03.691Z [info]: Attempting Method: POST : /tickets
+2023-09-25T04:53:03.695Z [info]: Error with jwtUtil TokenExpiredError: jwt expired
+2023-09-25T04:53:03.696Z [info]: Trying to post tickets
+2023-09-25T04:53:03.696Z [error]: Error because undefined
+2023-09-25T04:55:20.036Z [info]: Server is listening on Port: 3000
+2023-09-25T04:55:22.135Z [info]: Attempting Method: POST : /login
+2023-09-25T04:55:22.135Z [info]: Trying to login
+2023-09-25T04:55:22.578Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser2","role":"manager"}
+2023-09-25T04:55:32.313Z [info]: Attempting Method: POST : /tickets
+2023-09-25T04:55:32.317Z [info]: Error with jwtUtil TokenExpiredError: jwt expired
+2023-09-25T04:55:32.318Z [info]: Trying to post tickets
+2023-09-25T04:55:32.318Z [error]: Error because TokenExpiredError: jwt expired
+2023-09-25T04:56:02.418Z [info]: Attempting Method: POST : /tickets
+2023-09-25T04:56:02.420Z [info]: Trying to post tickets
+2023-09-25T04:56:02.420Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-25T04:57:02.697Z [info]: Attempting Method: POST : /tickets
+2023-09-25T04:57:02.699Z [info]: Trying to post tickets
+2023-09-25T04:57:02.699Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute, and No description in message or no description in message
+2023-09-25T04:57:17.467Z [info]: Attempting Method: POST : /tickets
+2023-09-25T04:57:17.468Z [info]: Error with jwtUtil TokenExpiredError: jwt expired
+2023-09-25T04:57:17.468Z [info]: Trying to post tickets
+2023-09-25T04:57:17.469Z [error]: Error because TokenExpiredError: jwt expired
+2023-09-25T04:57:23.229Z [info]: Attempting Method: POST : /tickets
+2023-09-25T04:57:23.231Z [info]: Trying to post tickets
+2023-09-25T04:57:23.645Z [info]: Successful POST:
+ {"amount":6342,"desc":"Hawaii","type":"work","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T04:57:38.349Z [info]: Attempting Method: GET : /tickets?status=pending
+2023-09-25T04:57:38.351Z [info]: Attempting to GET in ticketRouter
+2023-09-25T04:59:07.389Z [info]: Server is listening on Port: 3000
+2023-09-25T04:59:10.424Z [info]: Attempting Method: GET : /tickets?status=pending
+2023-09-25T04:59:10.429Z [info]: Attempting to GET in ticketRouter
+2023-09-25T05:00:01.641Z [info]: Server is listening on Port: 3000
+2023-09-25T05:00:05.744Z [info]: Attempting Method: GET : /tickets?status=pending
+2023-09-25T05:00:05.748Z [info]: Attempting to GET in ticketRouter
+2023-09-25T05:00:06.204Z [error]: Couldn't get ALL tickets from dynamoDB, Error:ValidationException: One or more parameter values were invalid: Condition parameter type does not match schema type
+2023-09-25T05:02:55.267Z [info]: Server is listening on Port: 3000
+2023-09-25T05:02:59.054Z [info]: Attempting Method: GET : /tickets?status=pending
+2023-09-25T05:02:59.058Z [info]: Attempting to GET in ticketRouter
+2023-09-25T05:02:59.517Z [info]: Successfully retreived available tickets with status: pending
+2023-09-25T05:03:09.010Z [info]: Attempting Method: GET : /tickets?status=approved
+2023-09-25T05:03:09.011Z [info]: Attempting to GET in ticketRouter
+2023-09-25T05:03:09.430Z [info]: Successfully retreived available tickets with status: approved
+2023-09-25T05:03:13.713Z [info]: Attempting Method: GET : /tickets?status=denied
+2023-09-25T05:03:13.714Z [info]: Attempting to GET in ticketRouter
+2023-09-25T05:03:14.120Z [info]: Successfully retreived available tickets with status: denied
+2023-09-25T05:03:18.599Z [info]: Attempting Method: GET : /tickets?status=pending
+2023-09-25T05:03:18.601Z [info]: Attempting to GET in ticketRouter
+2023-09-25T05:03:19.024Z [info]: Successfully retreived available tickets with status: pending
+2023-09-25T05:03:52.317Z [info]: Attempting Method: POST : /login
+2023-09-25T05:03:52.317Z [info]: Trying to login
+2023-09-25T05:03:52.730Z [info]: Succesfull login, current user {"password":"123456","username":"Alex","role":"employee"}
+2023-09-25T05:04:28.317Z [info]: Attempting Method: PUT : /tickets?ticketID=c9ddf6d0-b310-42b5-adf2-3f14d49d9152
+2023-09-25T05:04:28.318Z [info]: Attempting to PUT in ticketRouter
+2023-09-25T05:04:28.319Z [error]: Can't process requests with role: employee
+2023-09-25T05:05:37.019Z [info]: Attempting Method: POST : /login
+2023-09-25T05:05:37.020Z [info]: Trying to login
+2023-09-25T05:05:37.426Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser2","role":"manager"}
+2023-09-25T05:06:22.829Z [info]: Attempting Method: PUT : /tickets?ticketID=c9ddf6d0-b310-42b5-adf2-3f14d49d9152
+2023-09-25T05:06:22.830Z [info]: Attempting to PUT in ticketRouter
+2023-09-25T05:06:23.242Z [error]: Can not edit your own ticket!
+2023-09-25T05:08:00.806Z [info]: Attempting Method: PUT : /tickets?ticketID=c9ddf6d0-b310-42b5-adf2-3f14d49d9152
+2023-09-25T05:08:00.807Z [info]: Attempting to PUT in ticketRouter
+2023-09-25T05:08:01.219Z [error]: Can not edit your own ticket!
+2023-09-25T05:08:03.692Z [info]: Attempting Method: PUT : /tickets?ticketID=fd8dc93c-01f8-4b62-8426-04f1af045184
+2023-09-25T05:08:03.693Z [info]: Attempting to PUT in ticketRouter
+2023-09-25T05:08:04.093Z [error]: Can not edit ticket that has already been processed! Ticket status: denied
+2023-09-25T05:08:22.250Z [info]: Attempting Method: PUT : /tickets?ticketID=c9ddf6d0-b310-42b5-adf2-3f14d49d9152
+2023-09-25T05:08:22.251Z [info]: Attempting to PUT in ticketRouter
+2023-09-25T05:08:22.670Z [error]: Can not edit your own ticket!
+2023-09-25T05:08:43.695Z [info]: Attempting Method: PUT : /tickets?ticketID=193dfb2b-462e-4f72-9bfb-1570c054e49b
+2023-09-25T05:08:43.696Z [info]: Attempting to PUT in ticketRouter
+2023-09-25T05:08:44.409Z [info]: Successfully updated item: 193dfb2b-462e-4f72-9bfb-1570c054e49b with status: denied
+2023-09-25T05:08:48.920Z [info]: Attempting Method: GET : /tickets?status=pending
+2023-09-25T05:08:48.921Z [info]: Attempting to GET in ticketRouter
+2023-09-25T05:08:49.335Z [info]: Successfully retreived available tickets with status: pending
+2023-09-25T05:09:01.265Z [info]: Attempting Method: POST : /login
+2023-09-25T05:09:01.265Z [info]: Trying to login
+2023-09-25T05:09:01.666Z [info]: Succesfull login, current user {"password":"123456","username":"Alex","role":"employee"}
+2023-09-25T05:09:10.437Z [info]: Attempting Method: GET : /tickets
+2023-09-25T05:09:10.439Z [info]: Attempting to GET in ticketRouter
+2023-09-25T05:09:10.865Z [info]: Successfully retreived all tickets for user Alex
+2023-09-25T05:11:41.259Z [info]: Attempting Method: POST : /tickets
+2023-09-25T05:11:41.260Z [info]: Trying to post tickets
+2023-09-25T05:11:41.260Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute
+2023-09-25T05:15:00.046Z [info]: Server is listening on Port: 3000
+2023-09-25T05:15:03.406Z [info]: Attempting Method: POST : /login
+2023-09-25T05:15:03.407Z [info]: Trying to login
+2023-09-25T05:15:03.407Z [error]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-25T05:15:06.541Z [info]: Attempting Method: POST : /login
+2023-09-25T05:15:06.542Z [info]: Trying to login
+2023-09-25T05:15:06.993Z [error]: Username and password do not match
+2023-09-25T05:15:11.867Z [info]: Attempting Method: POST : /login
+2023-09-25T05:15:11.867Z [info]: Trying to login
+2023-09-25T05:15:12.283Z [info]: Succesfull login, current user {"password":"123456","username":"Alex","role":"employee"}
+2023-09-25T05:15:16.147Z [info]: Attempting Method: POST : /tickets
+2023-09-25T05:16:09.240Z [info]: Server is listening on Port: 3000
+2023-09-25T05:16:11.937Z [info]: Attempting Method: POST : /tickets
+2023-09-25T05:16:11.941Z [info]: Trying to post tickets
+2023-09-25T05:16:11.941Z [error]: Failed to post ticket because: No amount in ticket or no amount attribute
+2023-09-25T05:16:33.474Z [info]: Attempting Method: POST : /tickets
+2023-09-25T05:16:33.476Z [info]: Trying to post tickets
+2023-09-25T05:16:33.916Z [info]: Successful POST:
+ {"amount":6343435,"desc":"Hawaiirewfdhf","type":"work (maybe)","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T05:16:36.705Z [info]: Attempting Method: GET : /tickets?status=pending
+2023-09-25T05:16:36.707Z [info]: Attempting to GET in ticketRouter
+2023-09-25T05:16:37.120Z [info]: Successfully retreived available tickets with status: pending
+2023-09-25T05:16:44.207Z [info]: Attempting Method: PUT : /tickets?ticketID=c9ddf6d0-b310-42b5-adf2-3f14d49d9152
+2023-09-25T05:16:44.209Z [info]: Attempting to PUT in ticketRouter
+2023-09-25T05:16:44.209Z [error]: Can't process requests with role: employee
+2023-09-25T05:16:47.674Z [info]: Attempting Method: PUT : /tickets?ticketID=193dfb2b-462e-4f72-9bfb-1570c054e49b
+2023-09-25T05:16:47.675Z [info]: Attempting to PUT in ticketRouter
+2023-09-25T05:16:48.083Z [error]: Can not edit ticket that has already been processed! Ticket status: denied
+2023-09-25T05:16:50.718Z [info]: Attempting Method: PUT : /tickets?ticketID=c9ddf6d0-b310-42b5-adf2-3f14d49d9152
+2023-09-25T05:16:50.719Z [info]: Attempting to PUT in ticketRouter
+2023-09-25T05:16:51.015Z [error]: Can not edit your own ticket!
+2023-09-25T05:16:53.624Z [info]: Attempting Method: GET : /tickets
+2023-09-25T05:16:53.625Z [info]: Attempting to GET in ticketRouter
+2023-09-25T05:16:53.935Z [info]: Successfully retreived all tickets for user Alex
