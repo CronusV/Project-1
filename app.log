@@ -933,3 +933,26 @@ ValidationException: Query condition missed key schema element: ticket_id
 2023-09-25T20:52:35.026Z [info]: Attempting Method: POST : /test
 2023-09-25T20:55:17.575Z [info]: Server is listening on Port: 3000
 2023-09-25T20:55:20.017Z [info]: Attempting Method: POST : /test
+2023-09-25T21:21:13.365Z [info]: Server is listening on Port: 3000
+2023-09-25T21:21:16.424Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:22:29.155Z [info]: Server is listening on Port: 3000
+2023-09-25T21:22:30.931Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:22:31.389Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:24:01.725Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:24:01.728Z [error]: Error because No amount in ticket or no amount attribute
+2023-09-25T21:24:16.343Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:24:16.346Z [error]: Error because No amount in ticket or no amount attribute
+2023-09-25T21:24:29.390Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:24:29.393Z [error]: Error because No description in message or no description in message
+2023-09-25T21:24:58.000Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:26:37.410Z [info]: Server is listening on Port: 3000
+2023-09-25T21:26:38.829Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:26:39.278Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:28:29.002Z [info]: Server is listening on Port: 3000
+2023-09-25T21:28:31.919Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:28:32.368Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:28:34.496Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:28:34.498Z [error]: Error because Do not have ticket in form data as key

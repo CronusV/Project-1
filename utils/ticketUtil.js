@@ -71,7 +71,12 @@ function validateTicketPicture(req) {
 
 function validateTicketForm(req) {
   console.log(`This is body in util ${JSON.stringify(req.body)}`);
-  const ticket = JSON.parse(req.body.ticket);
+  let ticket;
+  // Only parse if valid
+  if (req.body.ticket) {
+    ticket = JSON.parse(req.body.ticket);
+  }
+
   const invalidMessages = [];
   const ticketCheck = {};
 
