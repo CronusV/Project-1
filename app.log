@@ -987,3 +987,14 @@ ValidationException: Query condition missed key schema element: ticket_id
  {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
 2023-09-25T21:40:35.958Z [info]: Attempting Method: POST : /tickets
 2023-09-25T21:40:36.373Z [info]: Successfully added ticket with image
+2023-09-25T21:42:13.556Z [info]: Server is listening on Port: 3000
+2023-09-25T21:42:23.392Z [info]: Attempting Method: POST : /login
+2023-09-25T21:42:23.393Z [info]: Trying to login
+2023-09-25T21:42:23.393Z [error]: Failed to login because either no username or password
+    or empty strings in those values
+2023-09-25T21:42:26.659Z [info]: Attempting Method: POST : /login
+2023-09-25T21:42:26.660Z [info]: Trying to login
+2023-09-25T21:42:27.106Z [error]: Username and password do not match
+2023-09-25T21:42:29.362Z [info]: Attempting Method: POST : /login
+2023-09-25T21:42:29.362Z [info]: Trying to login
+2023-09-25T21:42:29.757Z [info]: Succesfull login, current user {"password":"123456","username":"Alex","role":"employee"}
