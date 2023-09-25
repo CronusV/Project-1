@@ -19,22 +19,18 @@ router.post(
   validateMW.validateUser,
   async (req, res) => {
     const body = req.body;
-    console.log(`This is body at start! ${JSON.stringify(req.body)}`);
-    // console.log(`Checking to see if we have a file ${JSON.stringify(req.files)}`);
     // Test ticket with this
     const validateTicket = ticketUtil.validateTicketForm(req);
     // Test to see if there is an file with
     const picture = ticketUtil.validateTicketPicture(req);
     // Test User with middleware
     const validUser = req.body.validUser;
-    console.log(`Body: ${JSON.stringify(req.body)}`);
     // User / input validation
     if (!validUser) {
       logger.error(`Error because ${req.body.invalidMessage}`);
       res.status(400).send(`Error because ${req.body.invalidMessage}`);
       return;
     }
-
     if (!validateTicket.valid) {
       logger.error(`Error because ${validateTicket.invalidMessage}`);
       res
@@ -50,7 +46,6 @@ router.post(
     if (picture) {
       const picture_id = uuid.v4();
       contentType = req.files.file.mimetype;
-      // console.log(`This is the image: ${JSON.stringify(req.files.file)}`);
       // buffer: Buffer.from(req.files.file.data)
       try {
         // Success returns undefined

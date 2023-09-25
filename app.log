@@ -956,3 +956,34 @@ ValidationException: Query condition missed key schema element: ticket_id
  {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
 2023-09-25T21:28:34.496Z [info]: Attempting Method: POST : /tickets
 2023-09-25T21:28:34.498Z [error]: Error because Do not have ticket in form data as key
+2023-09-25T21:31:20.962Z [info]: Server is listening on Port: 3000
+2023-09-25T21:31:24.427Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:31:24.887Z [info]: Successfully added ticket with image
+2023-09-25T21:32:03.734Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:32:04.155Z [info]: Successfully added ticket with image
+2023-09-25T21:33:43.954Z [info]: Server is listening on Port: 3000
+2023-09-25T21:33:47.577Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:35:15.702Z [info]: Server is listening on Port: 3000
+2023-09-25T21:35:19.719Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:36:24.696Z [info]: Server is listening on Port: 3000
+2023-09-25T21:36:37.058Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:37:20.749Z [info]: Server is listening on Port: 3000
+2023-09-25T21:37:21.873Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:37:22.344Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:38:30.577Z [info]: Server is listening on Port: 3000
+2023-09-25T21:38:33.546Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:38:34.004Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:38:36.678Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:38:37.086Z [info]: Successfully added ticket with image
+2023-09-25T21:38:39.784Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:38:39.787Z [error]: Error because No description in message or no description in message
+2023-09-25T21:39:48.204Z [info]: Server is listening on Port: 3000
+2023-09-25T21:40:04.840Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:40:04.848Z [error]: Error because No description in message or no description in message
+2023-09-25T21:40:13.046Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:40:13.481Z [info]: Successful POST:
+ {"ticket":"{\n    \"amount\": 435,\n    \"desc\" : \"Testing tickets\",\n    \"type\" : \"Strech Goal\"\n}","validUser":true,"role":"manager","username":"managerUser2"}
+2023-09-25T21:40:35.958Z [info]: Attempting Method: POST : /tickets
+2023-09-25T21:40:36.373Z [info]: Successfully added ticket with image

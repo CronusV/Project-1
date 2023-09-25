@@ -10,7 +10,6 @@ const PORT = 3000;
 const loginRouter = require('./routes/loginRouter');
 const registerRouter = require('./routes/registerRouter');
 const ticketsRouter = require('./routes/ticketsRouter');
-const testRouter = require('./routes/testRouter');
 // middleware to parse JSON from req
 const bodyParser = require('body-parser');
 server.use(bodyParser.json());
@@ -21,7 +20,6 @@ server.use('/login', loginRouter);
 server.use('/register', registerRouter);
 server.use('/tickets', ticketsRouter);
 
-server.use('/test', testRouter);
 // Spin up server
 server.listen(PORT, () => {
   logger.info(`Server is listening on Port: ${PORT}`);

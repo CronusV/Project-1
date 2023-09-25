@@ -66,11 +66,11 @@ function validateTicketIDQuery(req) {
 
 // NEW FUNCTIONS FOR PICTURE and TEST
 function validateTicketPicture(req) {
+  // If send something then there is a files
   return req.files;
 }
-
+// Validates tickets from the form
 function validateTicketForm(req) {
-  console.log(`This is body in util ${JSON.stringify(req.body)}`);
   let ticket;
   // Only parse if valid
   if (req.body.ticket) {
