@@ -526,3 +526,47 @@ ValidationException: Query condition missed key schema element: ticket_id
 2023-09-22T16:03:59.121Z [info]: Trying to post tickets
 2023-09-22T16:03:59.528Z [info]: Successful POST:
  {"amount":6543,"desc":"Vacation","type":"work","valid":true,"validUser":true,"role":"employee","username":"Alex"}
+2023-09-22T21:03:00.574Z [info]: Server is listening on Port: 3000
+2023-09-22T21:03:39.714Z [info]: Attempting Method: POST : /login
+2023-09-22T21:03:39.715Z [info]: Trying to login
+2023-09-22T21:03:40.163Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser","role":"manager"}
+2023-09-22T21:04:40.538Z [info]: Attempting Method: POST : /tickets
+2023-09-22T21:04:40.541Z [info]: Trying to post tickets
+2023-09-22T21:04:40.964Z [info]: Successful POST:
+ {"amount":666,"desc":"Vacation LA","type":"work","valid":true,"validUser":true,"role":"manager","username":"managerUser"}
+2023-09-22T21:05:08.465Z [info]: Attempting Method: GET : /tickets?status=pending
+2023-09-22T21:05:08.467Z [info]: Attempting to GET in ticketRouter
+2023-09-22T21:05:08.876Z [info]: Successfully retreived available tickets with status: pending
+2023-09-22T21:05:25.170Z [info]: Attempting Method: PUT : /tickets?ticketID=95374a13-5f1a-4198-a074-c5d2a9c349f5
+2023-09-22T21:05:25.171Z [info]: Attempting to POST in ticketRouter
+2023-09-22T21:05:25.171Z [error]: Can't process requests with role: employee
+2023-09-22T21:05:43.628Z [info]: Attempting Method: PUT : /tickets?ticketID=95374a13-5f1a-4198-a074-c5d2a9c349f5
+2023-09-22T21:05:43.629Z [info]: Attempting to POST in ticketRouter
+2023-09-22T21:05:44.040Z [error]: Can not edit ticket that has already been processed! Ticket status: denied
+2023-09-22T21:06:15.446Z [info]: Attempting Method: PUT : /tickets?ticketID=a3dafee3-eec7-46a7-83ec-56c428bc25eb
+2023-09-22T21:06:15.448Z [info]: Attempting to POST in ticketRouter
+2023-09-22T21:06:15.855Z [error]: Can not edit your own ticket!
+2023-09-22T21:06:16.144Z [info]: Successfully updated item: a3dafee3-eec7-46a7-83ec-56c428bc25eb with status: approved
+2023-09-22T21:21:14.452Z [info]: Server is listening on Port: 3000
+2023-09-22T21:22:27.376Z [info]: Attempting Method: GET : /tickets?status=pending
+2023-09-22T21:22:27.381Z [info]: Attempting to GET in ticketRouter
+2023-09-22T21:22:27.834Z [info]: Successfully retreived available tickets with status: pending
+2023-09-22T21:22:59.120Z [info]: Attempting Method: POST : /tickets
+2023-09-22T21:22:59.122Z [info]: Trying to post tickets
+2023-09-22T21:22:59.527Z [info]: Successful POST:
+ {"amount":666,"desc":"New York","type":"work","valid":true,"validUser":true,"role":"manager","username":"managerUser"}
+2023-09-22T21:23:07.882Z [info]: Attempting Method: PUT : /tickets?ticketID=7ff89273-2161-46fb-a155-d79c1fc622be
+2023-09-22T21:23:07.884Z [info]: Attempting to PUT in ticketRouter
+2023-09-22T21:23:08.290Z [error]: Can not edit your own ticket!
+2023-09-22T21:23:22.742Z [info]: Attempting Method: POST : /login
+2023-09-22T21:23:22.743Z [info]: Trying to login
+2023-09-22T21:23:23.144Z [info]: Succesfull login, current user {"password":"123456","username":"managerUser2","role":"manager"}
+2023-09-22T21:23:39.040Z [info]: Attempting Method: PUT : /tickets?ticketID=7ff89273-2161-46fb-a155-d79c1fc622be
+2023-09-22T21:23:39.042Z [info]: Attempting to PUT in ticketRouter
+2023-09-22T21:23:39.738Z [info]: Successfully updated item: 7ff89273-2161-46fb-a155-d79c1fc622be with status: approved
+2023-09-22T21:23:44.528Z [info]: Attempting Method: GET : /tickets
+2023-09-22T21:23:44.530Z [info]: Attempting to GET in ticketRouter
+2023-09-22T21:23:44.924Z [info]: Successfully retreived all tickets for user Alex
+2023-09-22T21:23:53.232Z [info]: Attempting Method: GET : /tickets?status=pending
+2023-09-22T21:23:53.234Z [info]: Attempting to GET in ticketRouter
+2023-09-22T21:23:53.636Z [info]: Successfully retreived available tickets with status: pending

@@ -111,7 +111,7 @@ router.put(
   MW.validateUser,
   MW.validateNewTicketStatus,
   (req, res) => {
-    logger.info('Attempting to POST in ticketRouter');
+    logger.info('Attempting to PUT in ticketRouter');
     const body = req.body;
     const validTicketStatus = body.validTicketStatus;
     if (body.validUser && validTicketStatus) {
@@ -136,6 +136,7 @@ router.put(
               res
                 .status(400)
                 .send({ message: 'Can not edit your own ticket!' });
+              return;
             }
             if (ticket.status !== 'pending') {
               logger.error(
