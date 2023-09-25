@@ -6,12 +6,13 @@ const jwtUtil = require('../utils/jwtUtil');
 const logger = require('../utils/logger');
 
 const userDAO = require('../integration/userDAO');
-const MW = require('./middleware/logRegMW');
+const loginUtil = require('../utils/loginUtil');
 
-router.post('/', MW.validateUserPass, (req, res) => {
+router.post('/', (req, res) => {
   logger.info('Trying to login');
   const userReq = req.body;
-  if (userReq.valid) {
+  const validReq = loginUtil.validateUserPass(req);
+  if (validReq) {
     userDAO
       .getUser(userReq.username)
       .then((data) => {
