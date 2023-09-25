@@ -6,15 +6,17 @@ const uuid = require('uuid');
 const logger = require('../utils/logger');
 
 const ticketDAO = require('../integration/ticketDAO');
-const MW = require('./middleware/ticketMW');
+const validateMW = require('./middleware/validateUser');
+const ticketUtil = require('../utils/ticketUtil');
 
 // Assume we have user token or header
-router.post('/', MW.validateTicket, MW.validateUser, (req, res) => {
+router.post('/', validateMW.validateUser, (req, res) => {
   logger.info('Trying to post tickets');
   const body = req.body;
-  const valid = body.valid;
+  // const valid = body.valid;
+  const validTicket = ticketUtil.validateTicket(req);
   if (body.validUser) {
-    if (valid) {
+    if (validTicket.valid) {
       // ASSUME WE HAVE AUTHOR SOMEWHERE (probably jwt token)
       const ticket_id = uuid.v4();
       ticketDAO
@@ -32,9 +34,11 @@ router.post('/', MW.validateTicket, MW.validateUser, (req, res) => {
           res.status(400).send({ message: `Failed to add ticket in dynamoDB` });
         });
     } else {
-      logger.error(`Failed to post ticket because: ${body.invalidMessage}`);
+      logger.error(
+        `Failed to post ticket because: ${validTicket.invalidMessage}`
+      );
       res.status(400).send({
-        message: `Failed to post ticket because: ${body.invalidMessage}`,
+        message: `Failed to post ticket because: ${validTicket.invalidMessage}`,
       });
     }
   } else {
@@ -46,15 +50,16 @@ router.post('/', MW.validateTicket, MW.validateUser, (req, res) => {
 // Get all tickets. If manager you have access to all tickets, if user you can only access
 // your tickets
 // this endpoint only accessible with valid token (JWT)
-router.get('/', MW.validateGetTickets, MW.validateUser, (req, res) => {
+router.get('/', validateMW.validateUser, (req, res) => {
   logger.info('Attempting to GET in ticketRouter');
   const body = req.body;
+  const validTicket = ticketUtil.validateGetTickets(req);
   if (body.validUser) {
     const userRole = body.role;
-    const userStatus = body.status;
+    const userStatus = validTicket.status;
     const username = body.username;
     if (userRole === 'manager') {
-      if (body.validTicket) {
+      if (validTicket.valid) {
         ticketDAO
           .getTickets(userStatus)
           .then((data) => {
@@ -75,8 +80,8 @@ router.get('/', MW.validateGetTickets, MW.validateUser, (req, res) => {
               .send(`Couldn't get ALL tickets from dynamoDB, Error:${err}`);
           });
       } else {
-        logger.error(`Error because ${body.invalidMessage}`);
-        res.status(400).send({ message: body.invalidMessage });
+        logger.error(`Error because ${validTicket.invalidMessage}`);
+        res.status(400).send({ message: validTicket.invalidMessage });
       }
     } else if (userRole === 'employee') {
       ticketDAO
@@ -105,77 +110,86 @@ router.get('/', MW.validateGetTickets, MW.validateUser, (req, res) => {
   }
 });
 //This takes care of changing requests
-router.put(
-  '/',
-  MW.validateTicketIDQuery,
-  MW.validateUser,
-  MW.validateNewTicketStatus,
-  (req, res) => {
-    logger.info('Attempting to PUT in ticketRouter');
-    const body = req.body;
-    const validTicketStatus = body.validTicketStatus;
-    if (body.validUser && validTicketStatus) {
-      const userRole = body.role;
-      const username = body.username;
-      const ticketID = body.ticketID;
-      const newStatus = body.newStatus;
+router.put('/', validateMW.validateUser, (req, res) => {
+  logger.info('Attempting to PUT in ticketRouter');
+  const body = req.body;
 
-      if (userRole === 'employee') {
-        logger.error(`Can't process requests with role: ${userRole}`);
-        res
-          .status(400)
-          .send({ message: `Can't process requests with role: ${userRole}` });
-      }
-      if (userRole === 'manager') {
-        // Get ticket that was asked for
-        ticketDAO.getTicketByID(ticketID).then((data) => {
-          const ticket = data.Item;
-          if (ticket) {
-            if (ticket.author === username) {
-              logger.error('Can not edit your own ticket!');
-              res
-                .status(400)
-                .send({ message: 'Can not edit your own ticket!' });
-              return;
-            }
-            if (ticket.status !== 'pending') {
-              logger.error(
-                `Can not edit ticket that has already been processed! Ticket status: ${ticket.status}`
-              );
-              res.status(400).send({
-                message: `Can not edit ticket that has already been processed! Ticket status: ${ticket.status}`,
-              });
-            } else {
-              ticketDAO
-                .updateTicketByID(ticketID, newStatus, username)
-                .then((data) => {
-                  logger.info(
-                    `Successfully updated item: ${ticketID} with status: ${newStatus}`
-                  );
-                  res.status(200).send({
-                    message: `Successfully updated item: ${ticketID} with status: ${newStatus}`,
-                  });
-                })
-                .catch((err) => {
-                  logger.info(`Unable to update item ${ticketID} in dynamoDB`);
-                  res.status(500).send({
-                    message: `Unable to update item ${ticketID} in dynamoDB`,
-                  });
-                });
-            }
-            // Means ticket is pending and we should change it
-          } else {
-            logger.error(`Did not find any ticket with ticketID:${ticketID}`);
-            res.status(400).send({
-              message: `Did not find any ticket with ticketID:${ticketID}`,
-            });
+  const validNewStatus = ticketUtil.validateNewTicketStatus(req);
+  const validTicketStatus = validNewStatus.status;
+  const idQuery = ticketUtil.validateTicketIDQuery(req);
+  const validQuery = idQuery.validTicket;
+
+  if (body.validUser && validTicketStatus && validQuery) {
+    const userRole = body.role;
+    const username = body.username;
+    const ticketID = idQuery.ticketID;
+    const newStatus = body.newStatus;
+
+    if (userRole === 'employee') {
+      logger.error(`Can't process requests with role: ${userRole}`);
+      res
+        .status(400)
+        .send({ message: `Can't process requests with role: ${userRole}` });
+    }
+    if (userRole === 'manager') {
+      // Get ticket that was asked for
+      ticketDAO.getTicketByID(ticketID).then((data) => {
+        const ticket = data.Item;
+        if (ticket) {
+          if (ticket.author === username) {
+            logger.error('Can not edit your own ticket!');
+            res.status(400).send({ message: 'Can not edit your own ticket!' });
+            return;
           }
-        });
-      }
+          if (ticket.status !== 'pending') {
+            logger.error(
+              `Can not edit ticket that has already been processed! Ticket status: ${ticket.status}`
+            );
+            res.status(400).send({
+              message: `Can not edit ticket that has already been processed! Ticket status: ${ticket.status}`,
+            });
+          } else {
+            ticketDAO
+              .updateTicketByID(ticketID, newStatus, username)
+              .then((data) => {
+                logger.info(
+                  `Successfully updated item: ${ticketID} with status: ${newStatus}`
+                );
+                res.status(200).send({
+                  message: `Successfully updated item: ${ticketID} with status: ${newStatus}`,
+                });
+              })
+              .catch((err) => {
+                logger.info(`Unable to update item ${ticketID} in dynamoDB`);
+                res.status(500).send({
+                  message: `Unable to update item ${ticketID} in dynamoDB`,
+                });
+              });
+          }
+          // Means ticket is pending and we should change it
+        } else {
+          logger.error(`Did not find any ticket with ticketID:${ticketID}`);
+          res.status(400).send({
+            message: `Did not find any ticket with ticketID:${ticketID}`,
+          });
+        }
+      });
+    }
+  } else {
+    if (!validTicketStatus) {
+      logger.error(`Error because ${validNewStatus.invalidMessage}`);
+      res
+        .status(400)
+        .send({ message: `Error because ${validNewStatus.invalidMessage}` });
+    } else if (!validQuery) {
+      logger.error(`Error because ${idQuery.invalidMessage}`);
+      res
+        .status(400)
+        .send({ message: `Error because ${idQuery.invalidMessage}` });
     } else {
       logger.error(`Error because ${body.invalidMessage}`);
       res.status(400).send({ message: `Error because ${body.invalidMessage}` });
     }
   }
-);
+});
 module.exports = router;
