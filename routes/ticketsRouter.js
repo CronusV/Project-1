@@ -12,7 +12,7 @@ const validateMW = require('./middleware/validateUser');
 const ticketUtil = require('../utils/ticketUtil');
 
 // Assume we have user token or header
-
+// Post tickets
 router.post(
   '/',
   fileUpload({ limits: { fileSize: 50 * 1024 * 1024 } }),
@@ -67,11 +67,11 @@ router.post(
         );
         logger.info('Successfully added ticket with image');
         res
-          .status(200)
+          .status(201)
           .send({ message: 'Successfully added ticket with image' });
       } catch (err) {
         logger.info(`Failed to add image to s3: ${err}`);
-        res.status(400).send({ message: `Failed to add image to s3: ${err}` });
+        res.status(500).send({ message: `Failed to add image to s3: ${err}` });
       }
     } else {
       try {
@@ -90,12 +90,12 @@ router.post(
         });
       } catch (err) {
         logger.info(`Failed to add ticket to dynamoDB: ${err}`);
-        res.status(400).send({ message: `Failed to add ticket in dynamoDB` });
+        res.status(500).send({ message: `Failed to add ticket in dynamoDB` });
       }
     }
   }
 );
-//This takes care of changing requests
+//This takes care of changing tickets status
 router.put('/', validateMW.validateUser, (req, res) => {
   logger.info('Attempting to PUT in ticketRouter');
   const body = req.body;
@@ -114,7 +114,7 @@ router.put('/', validateMW.validateUser, (req, res) => {
     if (userRole === 'employee') {
       logger.error(`Can't process requests with role: ${userRole}`);
       res
-        .status(400)
+        .status(401)
         .send({ message: `Can't process requests with role: ${userRole}` });
     }
     if (userRole === 'manager') {
@@ -124,14 +124,14 @@ router.put('/', validateMW.validateUser, (req, res) => {
         if (ticket) {
           if (ticket.author === username) {
             logger.error('Can not edit your own ticket!');
-            res.status(400).send({ message: 'Can not edit your own ticket!' });
+            res.status(401).send({ message: 'Can not edit your own ticket!' });
             return;
           }
           if (ticket.status !== 'pending') {
             logger.error(
               `Can not edit ticket that has already been processed! Ticket status: ${ticket.status}`
             );
-            res.status(400).send({
+            res.status(401).send({
               message: `Can not edit ticket that has already been processed! Ticket status: ${ticket.status}`,
             });
           } else {
