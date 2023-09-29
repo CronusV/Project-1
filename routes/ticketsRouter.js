@@ -122,6 +122,7 @@ router.put('/', validateMW.validateUser, (req, res) => {
       // Get ticket that was asked for
       ticketDAO.getTicketByID(ticketID).then((data) => {
         const ticket = data.Item;
+        ticket.resolver_id = username;
         if (ticket) {
           if (ticket.author === username) {
             logger.error('Can not edit your own ticket!');
@@ -144,6 +145,7 @@ router.put('/', validateMW.validateUser, (req, res) => {
                 );
                 res.status(200).send({
                   message: `Successfully updated item: ${ticketID} with status: ${newStatus}`,
+                  ticket,
                 });
               })
               .catch((err) => {
