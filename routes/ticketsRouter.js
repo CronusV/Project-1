@@ -10,6 +10,7 @@ const logger = require('../utils/logger');
 const ticketDAO = require('../integration/ticketDAO');
 const validateMW = require('./middleware/validateUser');
 const ticketUtil = require('../utils/ticketUtil');
+const { raw } = require('body-parser');
 
 // Assume we have user token or header
 // Post tickets
@@ -178,4 +179,68 @@ router.put('/', validateMW.validateUser, (req, res) => {
     }
   }
 });
+
+// Get all tickets. If manager you have access to all tickets, if user you can only access
+// your tickets
+// this endpoint only accessible with valid token (JWT)
+router.get('/', validateMW.validateUser, (req, res) => {
+  logger.info('Attempting to GET in ticketRouter');
+  const body = req.body;
+  const validGetTicket = ticketUtil.validateGetTickets(req);
+
+  if (body.validUser) {
+    const userRole = body.role;
+    const userStatus = validGetTicket.status;
+    const username = body.username;
+    if (userRole === 'manager') {
+      if (!validGetTicket.valid) {
+        logger.error(validGetTicket.invalidMessage);
+        res.status(400).send({ message: validGetTicket.invalidMessage });
+        return;
+      }
+
+      ticketDAO
+        .getTickets(userStatus)
+        .then((data) => {
+          logger.info(
+            `Successfully retreived available tickets with status: ${userStatus}`
+          );
+          res.status(200).send({
+            message: `Successfully retreived available tickets with status: ${userStatus}`,
+            tickets: data.Items,
+          });
+        })
+        .catch((err) => {
+          logger.error(`Couldn't get ALL tickets from dynamoDB, Error:${err}`);
+          res
+            .status(400)
+            .send(`Couldn't get ALL tickets from dynamoDB, Error:${err}`);
+        });
+    } else if (userRole === 'employee') {
+      ticketDAO
+        .getTicketsByUser(username)
+        .then((data) => {
+          logger.info(
+            `Successfully retreived all tickets for user ${username}`
+          );
+          res.status(200).send({
+            message: `Successfully retreived all tickets for user ${username}`,
+            tickets: data.Items,
+          });
+        })
+        .catch((err) => {
+          logger.error(
+            `Couldn't get ALL tickets for user from dynamoDB: ${err} `
+          );
+          res.status(400).send({
+            message: `Couldn't get ALL tickets for user from database, try again later`,
+          });
+        });
+    }
+  } else {
+    logger.error(`Error because ${body.invalidMessage}`);
+    res.status(400).send({ message: `Error because ${body.invalidMessage}` });
+  }
+});
+
 module.exports = router;
