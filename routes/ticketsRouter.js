@@ -140,6 +140,7 @@ router.put('/', validateMW.validateUser, (req, res) => {
             ticketDAO
               .updateTicketByID(ticketID, newStatus, username)
               .then((data) => {
+                ticket.status = newStatus;
                 logger.info(
                   `Successfully updated item: ${ticketID} with status: ${newStatus}`
                 );
