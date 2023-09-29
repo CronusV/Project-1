@@ -27,11 +27,11 @@ router.post('/', (req, res) => {
             const token = jwtUtil.createJWT(user.username, user.role);
             // Set header to current user and send their role back
             res.setHeader('Current-User', user.username);
-            res.status(200).send({ role: user.role, token });
+            res.status(201).send({ role: user.role, token });
           } else {
             logger.error('Username and password do not match');
             res
-              .status(400)
+              .status(401)
               .send({ message: 'Username and password do not match' });
           }
         } else {
