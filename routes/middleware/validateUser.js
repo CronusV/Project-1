@@ -1,4 +1,5 @@
 const jwtUtil = require('../../utils/jwtUtil');
+const logger = require('../../utils/logger');
 // Make sure we have valid token
 // Need to make await because jwtUtil was promised
 async function validateUser(req, res, next) {
