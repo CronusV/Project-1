@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
             .catch((err) => {
               logger.info(`Failed to add user to dynamoDB: ${err}`);
               res
-                .status(400)
+                .status(500)
                 .send({ message: `Failed to add user in dynamoDB` });
             });
         } else {
@@ -42,7 +42,7 @@ router.post('/', (req, res) => {
           logger.error(
             `Couldn't create user because username already taken: ${newUser.username}`
           );
-          res.status(400).send({
+          res.status(409).send({
             message: `Couldn't create user because username already taken: ${newUser.username}`,
           });
         }
@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
       .catch((err) => {
         // Means the put failed in dynamoDB
         logger.error('DynamoDB failed put execution');
-        res.status(400).send({
+        res.status(500).send({
           message: 'DynamoDB failed PUT execution, please try again later',
         });
       });

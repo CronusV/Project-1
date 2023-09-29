@@ -45,7 +45,7 @@ router.post('/', (req, res) => {
         logger.error(
           `Failed to get item from DyanamoDB because invalid username. Error ${err}`
         );
-        res.status(400).send({
+        res.status(500).send({
           message: 'Failed to get item from DyanamoDB because invalid username',
         });
       });
