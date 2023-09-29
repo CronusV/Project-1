@@ -1,3 +1,5 @@
+const logger = require('./logger');
+
 // Returns a validTicket object that verifys tickets
 function validateTicket(req) {
   const body = req.body;
@@ -72,13 +74,21 @@ function validateTicketPicture(req) {
 // Validates tickets from the form
 function validateTicketForm(req) {
   let ticket;
-  // Only parse if valid
-  if (req.body.ticket) {
-    ticket = JSON.parse(req.body.ticket);
-  }
 
   const invalidMessages = [];
   const ticketCheck = {};
+  // Only parse if valid
+  console.log(req.body);
+  if (req.body.ticket) {
+    try {
+      ticket = JSON.parse(req.body.ticket);
+    } catch (err) {
+      logger.error('did not format ticket JSON correctly');
+      ticketCheck.invalidMessage = 'did not format ticket correctly';
+      ticketCheck.valid = false;
+      return ticketCheck;
+    }
+  }
 
   if (ticket) {
     // do error checking for ticket here
@@ -87,7 +97,7 @@ function validateTicketForm(req) {
     }
     if (!ticket.desc || ticket.desc === '') {
       invalidMessages.push(
-        'No description in message or no description in message'
+        'No attribute desc (description) in message or no description in message'
       );
     }
 
